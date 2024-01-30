@@ -29,7 +29,8 @@ export const Card = ({
   myProperty,
   style,
 }: {
-  property: Property;
+  property: any;
+  // property: Property;
   onPress?: () => void;
   myProperty?: boolean;
   style?: ViewStyle;
@@ -41,12 +42,12 @@ export const Card = ({
   const deleteProperty = useDeletePropertyMutation();
 
   const handleEditProperty = () => {
-    navigation.navigate("EditProperty", { propertyID: property.ID });
+    navigation.navigate("EditProperty", { propertyID: property.id });
     closeModal();
   };
 
   const handleDeleteProperty = () => {
-    deleteProperty.mutate({ propertyID: property.ID });
+    deleteProperty.mutate({ propertyID: property.id });
     closeModal();
   };
 
@@ -57,9 +58,10 @@ export const Card = ({
     >
       <ImageCarousel
         onImagePress={onPress}
-        images={property.images}
+        images={[property.coverPhoto.url]}
         chevronsShown
       />
+      
       <CardInformation property={property} myProperty={myProperty} />
 
       {myProperty ? (

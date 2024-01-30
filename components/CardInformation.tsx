@@ -41,18 +41,18 @@ export const CardInformation = ({
     let op: "add" | "remove" = "add";
     if (property?.liked) op = "remove";
 
-    alterUsersSavedProperties(property.ID, op);
-    saveProperty.mutate({ propertyID: property.ID, op });
+    alterUsersSavedProperties(property.id, op);
+    saveProperty.mutate({ propertyID: property.id, op });
   };
 
   const manageUnitsNavigation = () =>
-    navigation.navigate("ManageUnits", { propertyID: property.ID });
+    navigation.navigate("ManageUnits", { propertyID: property.id });
 
   const emailNavigation = () =>
-    navigation.navigate("MessageProperty", { propertyID: property.ID });
+    navigation.navigate("MessageProperty", { propertyID: property.id });
 
   const editPropertyNavigation = () =>
-    navigation.navigate("EditProperty", { propertyID: property.ID });
+    navigation.navigate("EditProperty", { propertyID: property.id });
 
   const getLowAndHighText = (type: "rent" | "bedroom") => {
     if (type === "rent") {
@@ -61,11 +61,13 @@ export const CardInformation = ({
       return `$${property.rentLow.toLocaleString()} - ${property.rentHigh.toLocaleString()}`;
     }
 
-    let bedLow = property.bedroomLow === 0 ? "Studio" : property.bedroomLow;
-    if (property.bedroomLow === property.bedroomHigh) return bedLow;
+    let roomNumber =
+      property.rooms === 0 ? "Studio" : `${property.rooms} Rooms`;
 
-    return `${bedLow} - ${property.bedroomHigh} Beds`;
+    return roomNumber;
   };
+
+  const address = property.location.map((item: any) => item.name).join(", ");
 
   const DefaultInfo = () => (
     <>
@@ -81,18 +83,24 @@ export const CardInformation = ({
           </Pressable>
         </Row>
       )}
+
       <Text category={"c1"}>{getLowAndHighText("bedroom")}</Text>
-      {property?.name ? (
-        <Text category={"c1"} style={styles.defaultMarginTop}>
-          {property.name}
+
+      {property?.title ? (
+        <Text category={"c2"} style={styles.defaultMarginTop}>
+          {property.title}
         </Text>
       ) : null}
-      <Text category={"c1"}>{property.street}</Text>
-      <Text category={"c1"}>
-        {property.city}, {property.state} {property.zip}
+
+      <Text category={"c1"} style={styles.defaultMarginTop}>
+        {address}
       </Text>
 
-      {property?.includedUtilities && property.includedUtilities.length > 0 ? (
+      {/* <Text category={"c1"}>
+        {property.city}, {property.state} {property.zip}
+      </Text> */}
+
+      {/* {property?.includedUtilities && property.includedUtilities.length > 0 ? (
         <Text category={"c1"} style={styles.defaultMarginTop}>
           {property.includedUtilities.map((tag, index) => {
             return property.includedUtilities &&
@@ -101,7 +109,7 @@ export const CardInformation = ({
               : `${tag}, `;
           })}
         </Text>
-      ) : null}
+      ) : null} */}
 
       <Row style={[styles.defaultMarginTop, styles.rowJustification]}>
         <Button
@@ -120,7 +128,7 @@ export const CardInformation = ({
         <Button
           style={styles.button}
           size="small"
-          onPress={() => callPhoneNumber(property.phoneNumber)}
+          onPress={() => callPhoneNumber(property.phoneNumber.phone)}
         >
           Call
         </Button>
@@ -188,7 +196,7 @@ export const CardInformation = ({
 const styles = StyleSheet.create({
   informationContainer: {
     paddingVertical: 10,
-    paddingHorizontal: 5,
+    paddingHorizontal: 10,
     borderWidth: 1,
     borderColor: theme["color-gray"],
     borderBottomLeftRadius: 5,

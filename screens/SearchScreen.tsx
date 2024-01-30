@@ -14,6 +14,7 @@ import { SearchScreenParams } from "../types";
 import { Property } from "../types/property";
 import { Text } from "@ui-kitten/components";
 import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
+import axios from "axios";
 
 export const SearchScreen = ({
   route,
@@ -25,15 +26,8 @@ export const SearchScreen = ({
   const [scrollAnimation] = useState(new Animated.Value(0));
   const mapRef = useRef<MapView | null>(null);
   const [location, setLocation] = useState<string | undefined>(undefined);
-  let boundingBox: number[] = [];
-  if (route.params?.boundingBox)
-    boundingBox = [
-      Number(route.params.boundingBox[0]),
-      Number(route.params.boundingBox[1]),
-      Number(route.params.boundingBox[2]),
-      Number(route.params.boundingBox[3]),
-    ];
-  const searchProperties = useSearchPropertiesQuery(boundingBox);
+
+  const searchProperties = useSearchPropertiesQuery();
 
   useEffect(() => {
     if (route.params) {
@@ -98,7 +92,7 @@ export const SearchScreen = ({
               bounces={false}
               scrollEventThrottle={16}
               data={searchProperties?.data}
-              keyExtractor={(item) => item.ID.toString()}
+              keyExtractor={(item) => item.id.toString()}
               showsVerticalScrollIndicator={false}
               renderItem={({ item }) => (
                 <Card
@@ -106,7 +100,7 @@ export const SearchScreen = ({
                   property={item}
                   onPress={() =>
                     navigation.navigate("PropertyDetails", {
-                      propertyID: item.ID,
+                      propertyID: item.id,
                     })
                   }
                 />

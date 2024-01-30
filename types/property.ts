@@ -4,8 +4,16 @@ import { Pet } from "./pet";
 import { Score } from "./score";
 import { TempApartment } from "./tempApartment";
 
+type PhoneNumber = {
+  mobile: string;
+  phone: string;
+};
+
 export type Property = {
-  ID: number;
+  id: number;
+  phoneNumber: PhoneNumber;
+  location: any;
+
   images: string[];
   rentLow: number;
   rentHigh: number;
@@ -17,10 +25,12 @@ export type Property = {
   state: string;
   zip: number;
   lat: number;
+  rooms: number;
+  title: string;
   lng: number;
   countryCode: string;
   callingCode: string;
-  phoneNumber: string;
+
   website?: string;
   unitType: "single" | "multiple";
   description?: string;

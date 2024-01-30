@@ -7,7 +7,7 @@ export const AMENITIES_STR = "amenities";
 export const DESCRIPTION_STR = "description";
 
 const baseHeight = 160;
-const iosNotch = 40;
+const iosNotch = 45;
 const iosHeight = baseHeight + iosNotch;
 let androidHeight = baseHeight;
 let androidNotch = 0;
@@ -16,13 +16,14 @@ androidHeight += androidNotch;
 
 export const HEADERHEIGHT = Platform.OS === "ios" ? iosHeight : androidHeight;
 
-const serverUrl = "https://apartmentsclone.tk/api";
+const serverUrl = "https://bayut.p.rapidapi.com/";
+
 const chatUrl = "https://apartmentsclone.tk";
 // const serverUrl = "http://192.168.30.24:4000/api";
 // const chatUrl = "http://192.168.30.24:3000";
 const location = "/location";
 const user = "/user";
-const property = "/property";
+const properties = "/properties";
 const apartment = "/apartment";
 const review = "/review";
 const conversation = "/conversation";
@@ -31,7 +32,7 @@ const refresh = "/refresh";
 const refreshTokenEndpoint = serverUrl + refresh;
 const locationEndpoint = serverUrl + location;
 const userEndpoint = serverUrl + user;
-const propertyEndpoint = serverUrl + property;
+const propertyEndpoint = serverUrl + properties;
 const apartmentEndpoint = serverUrl + apartment;
 const reviewEndpoint = serverUrl + review;
 const conversationEndpoint = serverUrl + conversation;
@@ -44,6 +45,7 @@ const allowsNotificationsEndpoint = (id: number) =>
   `${userEndpoint}/${id}/settings/notifications`;
 
 export const endpoints = {
+  serverUrl,
   chat: chatUrl,
   autoComplete: locationEndpoint + "/autocomplete",
   search: locationEndpoint + "/search",
@@ -59,6 +61,7 @@ export const endpoints = {
   getContactedPropertiesByUserID: contactedEndpoint,
   getPropertiesByUserID: propertyEndpoint + "/userid/",
   getPropertiesByBoundingBox: propertyEndpoint + "/search",
+  getProperties: propertyEndpoint + "/list",
   deleteProperty: propertyEndpoint + "/",
   updateProperty: propertyEndpoint + "/update/",
   getApartmentsByPropertyID: apartmentEndpoint + "/property/",

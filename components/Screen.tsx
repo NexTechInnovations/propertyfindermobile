@@ -8,6 +8,7 @@ import {
 
 import { Loading } from "./Loading";
 import { useLoading } from "../hooks/useLoading";
+import { HEADERHEIGHT } from "../constants";
 
 export const Screen = ({
   children,
@@ -29,6 +30,6 @@ export const Screen = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: HEADERHEIGHT,
   },
 });

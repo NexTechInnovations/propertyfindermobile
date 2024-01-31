@@ -4,6 +4,7 @@ import { endpoints, queryKeys } from "../../constants";
 
 import { Property } from "../../types/property";
 import { useUser } from "../useUser";
+import api from "../../services/api";
 
 // const fetchProperties = async (boundingBox?: number[]): Promise<Property[]> => {
 //   if (!boundingBox) return [];
@@ -42,7 +43,7 @@ import { useUser } from "../useUser";
 //   };
 // };
 
-const fetchProperties = async (): Promise<Property[]> => {
+const fetchProperties2 = async (): Promise<Property[]> => {
   const options = {
     method: "GET",
     url: "https://bayut.p.rapidapi.com/properties/list",
@@ -69,6 +70,26 @@ const fetchProperties = async (): Promise<Property[]> => {
   }
 };
 
+const fetchProperties = async (): Promise<Property[]> => {
+  const options = {
+    params: {
+      locationExternalIDs: "5002,6020",
+      hitsPerPage: "10",
+      page: 0,
+      lang: "en",
+      rentFrequency: "monthly",
+      categoryExternalID: 4,
+    },
+  };
+
+  try {
+    const response = await api.get("/properties/list", options);
+    return response.data.hits;
+  } catch (error: any) {
+    throw new Error(error.response?.data?.message || error.message);
+  }
+};
+
 export const useSearchPropertiesQuery = () => {
   const { user } = useUser();
   const queryInfo = useQuery(queryKeys.searchProperties, () =>
@@ -77,14 +98,14 @@ export const useSearchPropertiesQuery = () => {
 
   const data = queryInfo?.data;
 
-  // if (data) {
-  //   for (let property of data) {
-  //     property.liked = false;
-  //     if (user?.savedProperties?.includes(property.ID)) {
-  //       property.liked = true;
-  //     }
-  //   }
-  // }
+  if (data) {
+    for (let property of data) {
+      property.liked = false;
+      if (user?.savedProperties?.includes(property.id)) {
+        property.liked = true;
+      }
+    }
+  }
 
   return {
     ...queryInfo,

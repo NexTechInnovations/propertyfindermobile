@@ -33,8 +33,8 @@ export const PropertyHeaderSection = ({ property }: { property: Property }) => {
     let op: "add" | "remove" = "add";
     if (property?.liked) op = "remove";
 
-    alterUsersSavedProperties(property.ID, op);
-    saveProperty.mutate({ propertyID: property.ID, op });
+    alterUsersSavedProperties(property.id, op);
+    saveProperty.mutate({ propertyID: property.id, op });
   };
 
   const shareItem = async () => {
@@ -47,19 +47,20 @@ export const PropertyHeaderSection = ({ property }: { property: Property }) => {
     }
   };
 
+  const address = property.location.map((item: any) => item.name).join(", ");
   return (
     <>
-      {property.name ? (
+      {property.title ? (
         <Text category={"h5"} style={styles.defaultMarginTop}>
-          {property.name}
+          {property.title}
         </Text>
       ) : null}
       <Row style={[styles.containerRow, styles.defaultMarginTop]}>
-        <View>
-          <Text category={"c1"}>{property.street}</Text>
-          <Text category={"c1"}>{`${property.city}, ${getStateAbbreviation(
+        <View style={{ maxWidth: 240 }}>
+          <Text category={"c1"}>{address}</Text>
+          {/* <Text category={"c1"}>{`${property.city}, ${getStateAbbreviation(
             property.state
-          )} ${property.zip}`}</Text>
+          )} ${property.zip}`}</Text> */}
         </View>
         <Row style={styles.iconRow}>
           <MaterialIcons

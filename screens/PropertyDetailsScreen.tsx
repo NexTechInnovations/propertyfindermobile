@@ -31,12 +31,12 @@ export const PropertyDetailsScreen = ({
     <Screen>
       <FlatList
         data={[property.data]}
-        keyExtractor={(item) => item.ID.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <>
-            {item.images ? (
+            {item.coverPhoto ? (
               <ImageCarousel
-                images={item.images}
+                images={item.photos.map((photo) => photo.url)}
                 indexShown
                 imageStyle={styles.image}
               />
@@ -46,6 +46,8 @@ export const PropertyDetailsScreen = ({
               <Divider style={styles.divider} />
               <PricingAndFloorPlanSection property={item} />
               <Divider style={styles.divider} />
+              {/* 
+             
               <AboutSection property={item} />
               <Divider style={styles.divider} />
               <ContactSection property={item} />
@@ -58,6 +60,7 @@ export const PropertyDetailsScreen = ({
               <Divider style={styles.divider} />
               <ReviewSection property={item} />
               <Divider style={styles.divider} />
+              */}
             </View>
           </>
         )}

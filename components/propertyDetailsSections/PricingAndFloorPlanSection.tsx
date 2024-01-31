@@ -29,11 +29,11 @@ export const PricingAndFloorPlanSection = ({
     property.apartments
   );
 
-  useEffect(() => {
-    if (property.apartments !== currentApartments) {
-      setCurrentApartments(property.apartments);
-    }
-  }, [property]);
+  // useEffect(() => {
+  //   if (property.apartments !== currentApartments) {
+  //     setCurrentApartments(property.apartments);
+  //   }
+  // }, [property]);
 
   const filterByBedroom = (
     numOfBedrooms: number,
@@ -83,10 +83,10 @@ export const PricingAndFloorPlanSection = ({
     contains3Plus = false;
   if (property.apartments && property.apartments.length > 0) {
     for (let i in property.apartments) {
-      if (property.apartments[i].bedrooms === 0) containsStudio = true;
-      if (property.apartments[i].bedrooms === 1) contains1Bed = true;
-      if (property.apartments[i].bedrooms === 2) contains2Bed = true;
-      if (property.apartments[i].bedrooms >= 3) contains3Plus = true;
+      if (property.rooms === 0) containsStudio = true;
+      if (property.rooms === 1) contains1Bed = true;
+      if (property.rooms === 2) contains2Bed = true;
+      if (property.rooms >= 3) contains3Plus = true;
     }
     if (!containsStudio) removeUnnecessaryButtons(floorPlanOptions, "Studio");
     if (!contains1Bed) removeUnnecessaryButtons(floorPlanOptions, "1 Bedroom");
@@ -100,88 +100,80 @@ export const PricingAndFloorPlanSection = ({
       <Text category={"h5"} style={styles.defaultMarginVertical}>
         Pricing & Floor Plans
       </Text>
-      {currentApartments && currentApartments.length > 0 ? (
-        <>
-          <TabBar
-            tabs={floorPlanOptions}
-            style={styles.defaultMarginVertical}
-          />
+      <>
+        <TabBar tabs={floorPlanOptions} style={styles.defaultMarginVertical} />
 
-          {currentApartments.map((i) => (
-            <View
-              style={[styles.container, styles.defaultMarginVertical]}
-              key={i.ID.toString()}
-            >
-              <Row>
-                <View style={styles.apartmentLogisticsContainer}>
-                  <Text style={styles.apartmentLogisticsTitle}>
-                    {i.bedrooms === 0 ? "Studio " : i.bedrooms + " Bed"}{" "}
-                    {i.bathrooms} Bath
-                  </Text>
-                  <Text style={styles.apartmentLogisticsMargin} category={"c1"}>
-                    ${i.rent.toLocaleString("en-US")}
-                  </Text>
-                  <Text style={styles.apartmentLogisticsMargin} category={"c1"}>
-                    {i.bedrooms === 0 ? "Studio " : i.bedrooms + " Bed, "}{" "}
-                    {i.bathrooms + " Bath, "}{" "}
-                    {i.sqFt.toLocaleString("en-US") + " sqft"}
-                  </Text>
-                </View>
-                {i.images && i.images.length > 0 && (
-                  <Image source={{ uri: i.images[0] }} style={styles.image} />
-                )}
-              </Row>
-              {/* Available now part */}
-              <Row style={styles.availableNowContainer}>
-                <Text category={"c1"} style={{ fontWeight: "600" }}>
-                  Available: Now
-                </Text>
-                <TouchableOpacity
-                  onPress={() => console.log("navigate to floor plan details")}
-                >
-                  <Text category={"c1"} status="info">
-                    Floor Plan Details
-                  </Text>
-                </TouchableOpacity>
-              </Row>
-              {/* conditional part if aparments available */}
-              <Divider style={styles.divider} />
-              <Row style={styles.defaultMarginVertical}>
-                <Text category={"c1"} style={styles.layeredText}>
-                  Unit
-                </Text>
-                <Text category={"c1"} style={styles.layeredText}>
-                  Price
-                </Text>
-                <Text category={"c1"} style={styles.layeredText}>
-                  Sq Ft
-                </Text>
-                <Text category={"c1"} style={styles.availableText}>
-                  Availability
-                </Text>
-              </Row>
-              <Divider style={styles.divider} />
-              <Row style={styles.defaultMarginVertical}>
-                <Text category={"c1"} style={styles.layeredText}>
-                  {i.unit}:
-                </Text>
-                <Text category={"c1"} style={styles.layeredText}>
-                  {i?.rent ? `$${i.rent.toLocaleString("en-US")}` : "N/A"}
-                </Text>
-                <Text category={"c1"} style={styles.layeredText}>
-                  {i.sqFt.toLocaleString("en-US")}
-                </Text>
-                <Text category={"c1"} style={styles.availableText}>
-                  {new Date(i.availableOn).toLocaleDateString()}
-                </Text>
-              </Row>
-              <Divider style={styles.divider} />
+        <View style={[styles.container, styles.defaultMarginVertical]}>
+          <Row>
+            <View style={styles.apartmentLogisticsContainer}>
+              <Text style={styles.apartmentLogisticsTitle}>
+                {property.rooms === 0 ? "Studio " : property.rooms + " Bed"}{" "}
+                {property.baths} Bath
+              </Text>
+              <Text style={styles.apartmentLogisticsMargin} category={"c1"}>
+                ${property.price.toLocaleString("en-US")}
+              </Text>
+              <Text style={styles.apartmentLogisticsMargin} category={"c1"}>
+                {property.rooms === 0 ? "Studio " : property.rooms + " Bed"}{" "}
+                {property.baths + "Bath"}{" "}
+                {property.area.toLocaleString("en-US") + " sqft"}
+              </Text>
             </View>
-          ))}
-        </>
-      ) : (
-        <Text style={styles.apartmentLogisticsTitle}>No Apartments Listed</Text>
-      )}
+            {property.photos && property.photos.length > 0 && (
+              <Image
+                source={{ uri: property.photos[0].url }}
+                style={styles.image}
+              />
+            )}
+          </Row>
+
+          <Row style={styles.availableNowContainer}>
+            <Text category={"c1"} style={{ fontWeight: "600" }}>
+              Available: Now
+            </Text>
+            <TouchableOpacity
+              onPress={() => console.log("navigate to floor plan details")}
+            >
+              <Text category={"c1"} status="info">
+                Floor Plan Details
+              </Text>
+            </TouchableOpacity>
+          </Row>
+          <Divider style={styles.divider} />
+          <Row style={styles.defaultMarginVertical}>
+            <Text category={"c1"} style={styles.layeredText}>
+              Unit
+            </Text>
+            <Text category={"c1"} style={styles.layeredText}>
+              Price
+            </Text>
+            <Text category={"c1"} style={styles.layeredText}>
+              Sq Ft
+            </Text>
+            <Text category={"c1"} style={styles.availableText}>
+              Availability
+            </Text>
+          </Row>
+          <Divider style={styles.divider} />
+          <Row style={styles.defaultMarginVertical}>
+            <Text category={"c1"} style={styles.layeredText}>
+              {property.externalID}:
+            </Text>
+            <Text category={"c1"} style={styles.layeredText}>
+              {property?.price
+                ? `$${property?.price.toLocaleString("en-US")}`
+                : "N/A"}
+            </Text>
+            <Text category={"c1"} style={styles.layeredText}>
+              {property.area.toLocaleString("en-US")}
+            </Text>
+            <Text category={"c1"} style={styles.availableText}>
+              {new Date().toLocaleDateString()}
+            </Text>
+          </Row>
+          <Divider style={styles.divider} />
+        </View>
+      </>
     </>
   );
 };

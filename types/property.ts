@@ -13,8 +13,16 @@ export type Property = {
   id: number;
   phoneNumber: PhoneNumber;
   location: any;
-
+  externalID: string;
+  coverPhoto: { url: string };
   images: string[];
+  area: number;
+  price: number;
+  baths: number;
+  photos: {
+    url: string;
+  }[];
+
   rentLow: number;
   rentHigh: number;
   bedroomLow: number;

@@ -100,7 +100,7 @@ export const SearchScreen = ({
                   property={item}
                   onPress={() =>
                     navigation.navigate("PropertyDetails", {
-                      propertyID: item.id,
+                      propertyID: parseInt(item.externalID),
                     })
                   }
                 />

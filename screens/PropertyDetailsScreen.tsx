@@ -41,13 +41,13 @@ export const PropertyDetailsScreen = ({
                 imageStyle={styles.image}
               />
             ) : null}
+
             <View style={styles.contentContainer}>
               <PropertyHeaderSection property={item} />
               <Divider style={styles.divider} />
               <PricingAndFloorPlanSection property={item} />
               <Divider style={styles.divider} />
               {/* 
-             
               <AboutSection property={item} />
               <Divider style={styles.divider} />
               <ContactSection property={item} />

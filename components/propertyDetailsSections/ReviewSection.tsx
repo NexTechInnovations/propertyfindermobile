@@ -6,6 +6,7 @@ import { Property } from "../../types/property";
 import { OverallReviewScoreCard } from "../OverallReviewScoreCard";
 import { ReviewCard } from "../ReviewCard";
 import { getStateAbbreviation } from "../../utils/getStateAbbreviation";
+import { getPropertyFormattedLocation } from "../../utils/getPropertyFormatedLocation";
 
 export const ReviewSection = ({ property }: { property: Property }) => {
   const { navigate } = useNavigation();
@@ -38,12 +39,13 @@ export const ReviewSection = ({ property }: { property: Property }) => {
       <Button
         onPress={() =>
           navigate("Review", {
-            propertyID: property.ID,
-            propertyName: property?.name
-              ? property.name
-              : `${property.street}, ${getStateAbbreviation(property.state)}, ${
-                  property.zip
-                }`,
+            propertyID: property.id,
+            propertyName: property?.title
+              ? property.title
+              : // : `${property.street}, ${getStateAbbreviation(property.state)}, ${
+                //     property.zip
+                //   }`,
+                getPropertyFormattedLocation(property?.location),
           })
         }
         style={styles.defaultMarginVertical}

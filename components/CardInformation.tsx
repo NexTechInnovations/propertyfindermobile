@@ -10,6 +10,7 @@ import { callPhoneNumber } from "../utils/callPhoneNumber";
 import { getStateAbbreviation } from "../utils/getStateAbbreviation";
 import { useUser } from "../hooks/useUser";
 import { useSavePropertyMutation } from "../hooks/mutations/useSavePropertyMutation";
+import { getPropertyFormattedLocation } from "../utils/getPropertyFormatedLocation";
 
 export const CardInformation = ({
   property,
@@ -67,7 +68,7 @@ export const CardInformation = ({
     return roomNumber;
   };
 
-  const address = property.location.map((item: any) => item.name).join(", ");
+  const address = getPropertyFormattedLocation(property.location);
 
   const DefaultInfo = () => (
     <>

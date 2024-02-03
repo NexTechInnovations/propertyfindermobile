@@ -34,7 +34,7 @@ export const ContactSection = ({ property }: { property: Property }) => {
       <Text category={"h5"} style={styles.defaultMarginVertical}>
         Contact
       </Text>
-      <TouchableOpacity onPress={() => callPhoneNumber(property.phoneNumber)}>
+      <TouchableOpacity onPress={() => callPhoneNumber(property.phoneNumber.mobile)}>
         <Row style={styles.row}>
           <MaterialIcons
             name="smartphone"
@@ -43,7 +43,7 @@ export const ContactSection = ({ property }: { property: Property }) => {
           />
 
           <Text category={"c1"} status={"info"} style={styles.rowText}>
-            {formatPhoneNumber(property.phoneNumber, property.callingCode)}
+            {formatPhoneNumber(property.phoneNumber.mobile, property.callingCode)}
           </Text>
         </Row>
       </TouchableOpacity>
@@ -74,7 +74,7 @@ export const ContactSection = ({ property }: { property: Property }) => {
           appearance={"ghost"}
           onPress={() => {
             navigation.navigate("MessageProperty", {
-              propertyID: property.ID,
+              propertyID: property.id,
               tour: true,
             });
           }}
@@ -86,7 +86,7 @@ export const ContactSection = ({ property }: { property: Property }) => {
           appearance={"ghost"}
           onPress={() => {
             navigation.navigate("MessageProperty", {
-              propertyID: property.ID,
+              propertyID: property.id,
             });
           }}
         >

@@ -22,7 +22,10 @@ export type Property = {
   photos: {
     url: string;
   }[];
-
+  geography: {
+    lng: number;
+    lat: number;
+  };
   rentLow: number;
   rentHigh: number;
   bedroomLow: number;

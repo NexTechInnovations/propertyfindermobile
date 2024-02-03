@@ -33,16 +33,16 @@ export const LocationSection = ({ property }: { property: Property }) => {
           provider={"google"}
           style={styles.map}
           initialRegion={{
-            latitude: property.lat,
-            longitude: property.lng,
+            latitude: property.geography.lat,
+            longitude: property.geography.lng,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
         >
           <MapMarker
             color={theme["color-info-400"]}
-            lat={property.lat}
-            lng={property.lng}
+            lat={property.geography.lat}
+            lng={property.geography.lng}
           />
         </MapView>
       </View>

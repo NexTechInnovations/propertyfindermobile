@@ -9,6 +9,7 @@ import { Row } from "../Row";
 import { getStateAbbreviation } from "../../utils/getStateAbbreviation";
 import { useUser } from "../../hooks/useUser";
 import { useSavePropertyMutation } from "../../hooks/mutations/useSavePropertyMutation";
+import { getPropertyFormattedLocation } from "../../utils/getPropertyFormatedLocation";
 
 export const PropertyHeaderSection = ({ property }: { property: Property }) => {
   const { user, setSavedProperties } = useUser();
@@ -47,7 +48,8 @@ export const PropertyHeaderSection = ({ property }: { property: Property }) => {
     }
   };
 
-  const address = property.location.map((item: any) => item.name).join(", ");
+  const address = getPropertyFormattedLocation(property.location);
+
   return (
     <>
       {property.title ? (

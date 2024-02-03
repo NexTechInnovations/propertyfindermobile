@@ -47,19 +47,20 @@ export const PropertyDetailsScreen = ({
               <Divider style={styles.divider} />
               <PricingAndFloorPlanSection property={item} />
               <Divider style={styles.divider} />
-              {/* 
               <AboutSection property={item} />
               <Divider style={styles.divider} />
               <ContactSection property={item} />
               <Divider style={styles.divider} />
-              <AmentitiesSection property={item} />
-              <Divider style={styles.divider} />
-              <LeaseAndFeesSection property={item} />
+              <ReviewSection property={item} />
               <Divider style={styles.divider} />
               <LocationSection property={item} />
               <Divider style={styles.divider} />
-              <ReviewSection property={item} />
-              <Divider style={styles.divider} />
+              {/* 
+                <AmentitiesSection property={item} />
+                <Divider style={styles.divider} />
+                <LeaseAndFeesSection property={item} />
+                <Divider style={styles.divider} />
+               
               */}
             </View>
           </>

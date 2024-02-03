@@ -12,12 +12,12 @@ export const AboutSection = ({ property }: { property: Property }) => {
         <Text category={"h5"} style={styles.header}>
           About
         </Text>
-        {property?.name ? (
+        {property?.title ? (
           <Row>
             <MaterialIcons color={"#36454f"} size={24} name="apartment" />
 
             <Text category={"h6"} style={styles.apartmentText}>
-              {property?.name}
+              {property?.title}
             </Text>
           </Row>
         ) : null}
@@ -30,5 +30,5 @@ export const AboutSection = ({ property }: { property: Property }) => {
 
 const styles = StyleSheet.create({
   header: { marginBottom: 15, marginTop: 10 },
-  apartmentText: { paddingLeft: 10, marginBottom: 10 },
+  apartmentText: { paddingHorizontal: 10, marginBottom: 10 },
 });

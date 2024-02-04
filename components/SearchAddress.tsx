@@ -12,7 +12,12 @@ import { getFormattedLocationText } from "../utils/getFormattedLocationText";
 import { Row } from "./Row";
 import { theme } from "../theme";
 import { Location, SearchLocation } from "../types/locationIQ";
-import { getSuggestedLocations, searchLocations } from "../services/location";
+import {
+  autoCompleteSearch,
+  getSuggestedLocations,
+  searchLocations,
+} from "../services/location";
+import { getPropertyFormattedLocation } from "../utils/getPropertyFormatedLocation";
 
 export const SearchAddress = ({
   type,
@@ -39,10 +44,11 @@ export const SearchAddress = ({
 
   const getSuggestions = async (value: string) => {
     let locations;
-    if (type === "search") locations = await searchLocations(value);
-    else locations = await getSuggestedLocations(value);
+    if (type === "search") locations = await autoCompleteSearch(value);
+    else locations = await autoCompleteSearch(value);
 
     if (locations.length > 0) setSuggestions(locations);
+    console.log(locations);
   };
 
   const handleSubmitEditing = async () => {
@@ -51,6 +57,7 @@ export const SearchAddress = ({
     // If only 1 suggestion appears, it's better UX for them to just press enter on the
     // keyboard, but if they are searching for a specific address & multiple appear,
     // the user needs to choose
+
     if (
       (type === "autocomplete" && suggestions.length > 0) ||
       suggestions.length === 1
@@ -63,7 +70,9 @@ export const SearchAddress = ({
   }: {
     locationItem: Location | SearchLocation;
   }) => {
-    const location = getFormattedLocationText(locationItem, type);
+    // const location = getFormattedLocationText(locationItem, type);
+    const location = getPropertyFormattedLocation(locationItem.hierarchy);
+
     return (
       <Row style={styles.suggestionContainer}>
         <Text>{location}</Text>
@@ -114,7 +123,7 @@ export const SearchAddress = ({
         <FlatList
           showsVerticalScrollIndicator={false}
           data={suggestions as Location[]}
-          keyExtractor={(item, index) => item.place_id + index}
+          keyExtractor={(item, index: number) => `${item.id}${index}`}
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => {

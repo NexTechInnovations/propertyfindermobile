@@ -1,4 +1,7 @@
 export type Location = {
+  id: number;
+  hierarchy: { name: string }[];
+  location: { name: string }[];
   place_id: string;
   osm_id: string;
   osm_type: string;
@@ -15,6 +18,8 @@ export type Location = {
 
 export type SearchLocation = {
   address: Address;
+  hierarchy: { name: string }[];
+  location: { name: string }[];
   boundingbox: string[];
   class: string;
   display_name: string;

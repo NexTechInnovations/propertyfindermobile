@@ -38,7 +38,7 @@ export const useUser = () => {
     if (searchedProperties) {
       for (let i of searchedProperties) {
         i.liked = false;
-        if (user.savedProperties?.includes(i.ID)) i.liked = true;
+        if (user.savedProperties?.includes(i.id)) i.liked = true;
       }
       queryClient.setQueryData(queryKeys.searchProperties, searchedProperties);
     }

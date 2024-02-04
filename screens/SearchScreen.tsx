@@ -15,6 +15,7 @@ import { Property } from "../types/property";
 import { Text } from "@ui-kitten/components";
 import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
 import axios from "axios";
+import { useUser } from "../hooks/useUser";
 
 export const SearchScreen = ({
   route,

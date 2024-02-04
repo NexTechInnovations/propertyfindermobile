@@ -25,7 +25,8 @@ export const PropertyDetailsScreen = ({
 }) => {
   const property = useSelectedPropertyQuery(route.params.propertyID);
 
-  if (!property.data) return <Text>Unable to get property ...</Text>;
+  if (!property.data)
+    return <Text style={{ margin: 12 }}>Trying to fetch your property...</Text>;
 
   return (
     <Screen>

@@ -17,7 +17,6 @@ import { User } from "./types/user";
 import { socket } from "./constants/socket";
 import { queryKeys } from "./constants";
 import { refreshTokens } from "./services/tokens";
-import { useUser } from "./hooks/useUser";
 
 const queryClient = new QueryClient();
 LogBox.ignoreAllLogs();
@@ -27,19 +26,6 @@ export default function App() {
   const colorScheme = useColorScheme();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const { login } = useUser();
-
-  useEffect(() => {
-    login({
-      ID: 12,
-      firstName: "Saif",
-      lastName: "Mohamed",
-      email: "saifmohamed.dev@gmail.com",
-      allowsNotifications: true,
-      accessToken: "12361263",
-      refreshToken: "138765123",
-    });
-  }, []);
 
   useEffect(() => {
     async function getUser() {

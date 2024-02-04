@@ -40,6 +40,7 @@ import { useNotifications } from "../hooks/useNotifications";
 import { AccountSettingsScreen } from "../screens/AccountSettingsScreen";
 import { ConversationsScreen } from "../screens/ConversationsScreen";
 import { MessagesScreen } from "../screens/MessagesScreen";
+import { useUser } from "../hooks/useUser";
 
 export default function Navigation({
   colorScheme,
@@ -60,6 +61,8 @@ export default function Navigation({
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+  const { login } = useUser();
+
   const { registerForPushNotificationsAsync, handleNotificationResponse } =
     useNotifications();
 
@@ -82,6 +85,18 @@ function RootNavigator() {
       if (responseListener)
         Notifications.removeNotificationSubscription(responseListener);
     };
+  }, []);
+
+  useEffect(() => {
+    login({
+      ID: 12,
+      firstName: "Saif",
+      lastName: "Mohamed",
+      email: "saifmohamed.dev@gmail.com",
+      allowsNotifications: true,
+      accessToken: "12361263",
+      refreshToken: "138765123",
+    });
   }, []);
 
   return (

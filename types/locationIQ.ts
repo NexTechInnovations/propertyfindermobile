@@ -2,6 +2,11 @@ export type Location = {
   id: number;
   hierarchy: { name: string }[];
   location: { name: string }[];
+  geography: {
+    lat: string;
+    lng: string;
+  };
+  name: string;
   place_id: string;
   osm_id: string;
   osm_type: string;

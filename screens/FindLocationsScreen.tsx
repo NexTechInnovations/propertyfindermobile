@@ -11,6 +11,7 @@ import { CurrentLocationButton } from "../components/CurrentLocationButton";
 import { getFormattedLocationText } from "../utils/getFormattedLocationText";
 import { RecentSearchList } from "../components/RecentSearchList";
 import { SearchAddress } from "../components/SearchAddress";
+import { getPropertyFormattedLocation } from "../utils/getPropertyFormatedLocation";
 
 export const FindLocationsScreen = () => {
   const [suggestions, setSuggestions] = useState<Location[]>([]);
@@ -25,9 +26,9 @@ export const FindLocationsScreen = () => {
         let included = false;
         for (let i of recentSearches) {
           if (
-            i.display_name === location.display_name &&
-            i.lon === location.lon &&
-            i.lat === location.lat
+            i.name === location.name &&
+            i.lon === location.geography.lng &&
+            i.lat === location.geography.lat
           ) {
             included = true;
             break;
@@ -45,9 +46,9 @@ export const FindLocationsScreen = () => {
     navigation.navigate("Root", {
       screen: "Search",
       params: {
-        location: getFormattedLocationText(location, "autocomplete"),
-        lat: location.lat,
-        lon: location.lon,
+        location: getPropertyFormattedLocation(location.hierarchy),
+        lat: location.geography.lat ,
+        lon: location.geography.lng ,
         boundingBox: location.boundingbox,
       },
     });

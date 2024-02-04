@@ -48,7 +48,6 @@ export const SearchAddress = ({
     else locations = await autoCompleteSearch(value);
 
     if (locations.length > 0) setSuggestions(locations);
-    console.log(locations);
   };
 
   const handleSubmitEditing = async () => {
@@ -123,7 +122,7 @@ export const SearchAddress = ({
         <FlatList
           showsVerticalScrollIndicator={false}
           data={suggestions as Location[]}
-          keyExtractor={(item, index: number) => `${item.id}${index}`}
+          keyExtractor={(item, index) => `${item.id + index}`}
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => {

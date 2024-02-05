@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Location } from "../types/locationIQ";
 import { RecentSearchButton } from "./RecentSearchButton";
 import { getFormattedLocationText } from "../utils/getFormattedLocationText";
+import { getPropertyFormattedLocation } from "../utils/getPropertyFormatedLocation";
 
 export const RecentSearchList = ({
   recentSearches,
@@ -34,9 +35,9 @@ export const RecentSearchList = ({
     navigation.navigate("Root", {
       screen: "Search",
       params: {
-        location: getFormattedLocationText(location),
-        lat: location.lat,
-        lon: location.lon,
+        location: getPropertyFormattedLocation(location.hierarchy),
+        lat: location.geography.lat,
+        lon: location.geography.lng,
         boundingBox: location.boundingbox,
       },
     });
@@ -51,8 +52,8 @@ export const RecentSearchList = ({
           {recentSearches.map((i, index) =>
             index < 2 ? (
               <RecentSearchButton
-                key={i.display_name + index}
-                name={getFormattedLocationText(i, "autocomplete")}
+                key={i.name + index}
+                name={getPropertyFormattedLocation(i.hierarchy)}
                 style={styles.recentSearchButton}
                 onPress={() => handleRecentSearchButtonPress(i)}
               />
@@ -67,7 +68,7 @@ export const RecentSearchList = ({
         {recentSearches.map((i, index) => (
           <RecentSearchButton
             key={i.display_name + index}
-            name={getFormattedLocationText(i, "autocomplete")}
+            name={getPropertyFormattedLocation(i.hierarchy)}
             style={styles.recentSearchButton}
             onPress={() => handleRecentSearchButtonPress(i)}
           />

@@ -47,8 +47,8 @@ export const FindLocationsScreen = () => {
       screen: "Search",
       params: {
         location: getPropertyFormattedLocation(location.hierarchy),
-        lat: location.geography.lat ,
-        lon: location.geography.lng ,
+        lat: location.geography.lat,
+        lon: location.geography.lng,
         boundingBox: location.boundingbox,
       },
     });

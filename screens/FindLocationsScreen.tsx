@@ -50,6 +50,7 @@ export const FindLocationsScreen = () => {
         lat: location.geography.lat,
         lon: location.geography.lng,
         boundingBox: location.boundingbox,
+        externalIDs: [location.externalID],
       },
     });
   };

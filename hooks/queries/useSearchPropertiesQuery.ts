@@ -70,10 +70,14 @@ const fetchProperties2 = async (): Promise<Property[]> => {
   }
 };
 
-const fetchProperties = async (): Promise<Property[]> => {
+const fetchProperties = async ({
+  externalIDs,
+}: {
+  externalIDs?: string[];
+}): Promise<Property[]> => {
   const options = {
     params: {
-      locationExternalIDs: "5002,6020",
+      locationExternalIDs: externalIDs?.join(",") || "5002,6020",
       hitsPerPage: "10",
       page: 0,
       lang: "en",
@@ -90,10 +94,14 @@ const fetchProperties = async (): Promise<Property[]> => {
   }
 };
 
-export const useSearchPropertiesQuery = () => {
+export const useSearchPropertiesQuery = ({
+  externalIDs,
+}: {
+  externalIDs?: string[] | undefined;
+}) => {
   const { user } = useUser();
   const queryInfo = useQuery(queryKeys.searchProperties, () =>
-    fetchProperties()
+    fetchProperties({ externalIDs })
   );
 
   const data = queryInfo?.data;

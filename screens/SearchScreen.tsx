@@ -28,12 +28,20 @@ export const SearchScreen = ({
   const mapRef = useRef<MapView | null>(null);
   const [location, setLocation] = useState<string | undefined>(undefined);
 
-  const searchProperties = useSearchPropertiesQuery();
+  let externalIDs: string[] = [];
+  if (route.params?.externalIDs) {
+    externalIDs = route.params.externalIDs;
+  }
+
+  const searchProperties = useSearchPropertiesQuery({
+    externalIDs,
+  });
 
   useEffect(() => {
     if (route.params) {
       setLocation(route.params.location);
       searchProperties.refetch();
+      console.log(route.params);
 
       mapRef?.current?.animateCamera({
         center: {

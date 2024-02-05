@@ -6,6 +6,7 @@ export type Location = {
     lat: string;
     lng: string;
   };
+  externalID: string;
   name: string;
   place_id: string;
   osm_id: string;

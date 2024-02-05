@@ -59,4 +59,5 @@ export type SearchScreenParams = {
   boundingBox: string[];
   lat: string;
   lon: string;
+  externalIDs: string[];
 };

@@ -39,6 +39,7 @@ export const RecentSearchList = ({
         lat: location.geography.lat,
         lon: location.geography.lng,
         boundingBox: location.boundingbox,
+        externalIDs: [location.externalID],
       },
     });
   };

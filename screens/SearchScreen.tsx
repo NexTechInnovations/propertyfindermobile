@@ -33,7 +33,6 @@ export const SearchScreen = ({
   useEffect(() => {
     if (route.params) {
       setLocation(route.params.location);
-      7;
       searchProperties.refetch();
 
       mapRef?.current?.animateCamera({

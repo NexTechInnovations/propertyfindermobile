@@ -25,8 +25,11 @@ export const SearchScreen = ({
   const navigation = useNavigation();
   const [mapShown, setMapShown] = useState<boolean>(false);
   const [scrollAnimation] = useState(new Animated.Value(0));
-  const mapRef = useRef<MapView | null>(null);
   const [location, setLocation] = useState<string | undefined>(undefined);
+  const mapRef = useRef<MapView | null>(null);
+  const [filteredProperties, setFilteredProperties] = useState<
+    Property[] | undefined
+  >([]);
 
   let externalIDs: string[] = [];
   if (route.params?.externalIDs) {
@@ -37,11 +40,20 @@ export const SearchScreen = ({
     externalIDs,
   });
 
+  const sortPropertiesByPrice = (type = "default") => {
+    if (type === "default") setFilteredProperties(searchProperties.data);
+    else
+      setFilteredProperties(
+        searchProperties.data?.sort((a, b) =>
+          type === "asc" ? a.price - b.price : b.price - a.price
+        )
+      );
+  };
+
   useEffect(() => {
     if (route.params) {
       setLocation(route.params.location);
       searchProperties.refetch();
-      console.log(route.params);
 
       mapRef?.current?.animateCamera({
         center: {
@@ -51,6 +63,20 @@ export const SearchScreen = ({
       });
     }
   }, [route]);
+
+  if (searchProperties.isLoading) {
+    return (
+      <Screen
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text>Loading...</Text>
+      </Screen>
+    );
+  }
 
   return (
     <Screen>
@@ -62,6 +88,7 @@ export const SearchScreen = ({
         availableProperties={
           searchProperties.data ? searchProperties.data.length : undefined
         }
+        sortPropertiesByPrice={sortPropertiesByPrice}
       />
 
       {mapShown ? (

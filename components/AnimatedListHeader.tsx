@@ -24,7 +24,9 @@ export const AnimatedListHeader = ({
   setMapShown,
   location,
   availableProperties,
+  sortPropertiesByPrice,
 }: {
+  sortPropertiesByPrice: (type: string) => void;
   scrollAnimation: Animated.Value;
   mapShown: boolean;
   setMapShown: (bool: boolean) => void;
@@ -83,7 +85,7 @@ export const AnimatedListHeader = ({
     >
       <View style={styles.defaultMarginHorizontal}>
         <HeaderInput location={location} />
-        <HeaderFilterButtons />
+        <HeaderFilterButtons sortPropertiesByPrice={sortPropertiesByPrice} />
       </View>
       <Divider style={styles.divider} />
       <HeaderLogistics

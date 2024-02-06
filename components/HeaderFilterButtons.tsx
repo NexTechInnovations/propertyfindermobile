@@ -3,8 +3,13 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Button } from "@ui-kitten/components";
 
 import { theme } from "../theme";
+import { useState } from "react";
 
-export const HeaderFilterButtons = () => {
+export const HeaderFilterButtons = ({
+  sortPropertiesByPrice,
+}: {
+  sortPropertiesByPrice: (type: string) => void;
+}) => {
   const filterButtons = [
     {
       iconName: "filter-variant",
@@ -12,7 +17,7 @@ export const HeaderFilterButtons = () => {
     },
     {
       label: "Price",
-      onPress: () => console.log("price"),
+      onPress: () => sortPropertiesByPrice("asc"),
     },
     {
       label: "Move-In Date",

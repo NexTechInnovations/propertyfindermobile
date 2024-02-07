@@ -1,4 +1,10 @@
-import { FlatList, StyleSheet } from "react-native";
+import {
+  FlatList,
+  StyleProp,
+  StyleSheet,
+  TextStyle,
+  ViewStyle,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Button } from "@ui-kitten/components";
 
@@ -10,6 +16,7 @@ export const HeaderFilterButtons = ({
 }: {
   sortPropertiesByPrice: (type: string) => void;
 }) => {
+  const [priceActive, setPriceActive] = useState<boolean>(false);
   const filterButtons = [
     {
       iconName: "filter-variant",
@@ -17,15 +24,21 @@ export const HeaderFilterButtons = ({
     },
     {
       label: "Price",
-      onPress: () => sortPropertiesByPrice("asc"),
+      onPress: () => {
+        sortPropertiesByPrice("asc");
+        setPriceActive((prev) => !prev);
+      },
+      active: priceActive,
     },
     {
       label: "Move-In Date",
       onPress: () => console.log("move in date"),
+      active: false,
     },
     {
       label: "Pets",
       onPress: () => console.log("pets"),
+      active: false,
     },
   ];
 
@@ -56,7 +69,7 @@ export const HeaderFilterButtons = ({
         return (
           <Button
             appearance={"ghost"}
-            style={styles.button}
+            style={[styles.button]}
             onPress={item.onPress}
           >
             {item.label}
@@ -66,6 +79,14 @@ export const HeaderFilterButtons = ({
       keyExtractor={(_, index) => index.toString()}
     />
   );
+};
+
+const buttonBackgroundStyle = (
+  active: boolean
+): StyleProp<ViewStyle | TextStyle> => {
+  return {
+    backgroundColor: active ? theme["color-primary-500"] : "white",
+  };
 };
 
 const styles = StyleSheet.create({

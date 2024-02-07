@@ -11,6 +11,7 @@ import { getStateAbbreviation } from "../utils/getStateAbbreviation";
 import { useUser } from "../hooks/useUser";
 import { useSavePropertyMutation } from "../hooks/mutations/useSavePropertyMutation";
 import { getPropertyFormattedLocation } from "../utils/getPropertyFormatedLocation";
+import { getFormattedPrice } from "../utils/getFormattedPrice";
 
 export const CardInformation = ({
   property,
@@ -95,6 +96,10 @@ export const CardInformation = ({
 
       <Text category={"c1"} style={styles.defaultMarginTop}>
         {address}
+      </Text>
+
+      <Text category={"c1"} style={styles.defaultMarginTop}>
+        {getFormattedPrice(property.price, "en-US", "USD")}
       </Text>
 
       {/* <Text category={"c1"}>

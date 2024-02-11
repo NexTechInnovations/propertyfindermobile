@@ -9,11 +9,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Button } from "@ui-kitten/components";
 
 import { theme } from "../theme";
-import { useState } from "react";
 
 export const HeaderFilterButtons = ({}: {}) => {
-  const [priceActive, setPriceActive] = useState<boolean>(false);
-  
   const filterButtons = [
     // {
     //   iconName: "filter-variant",
@@ -21,11 +18,7 @@ export const HeaderFilterButtons = ({}: {}) => {
     // },
     {
       label: "Rent/Buy",
-      onPress: () => {
-        // sortPropertiesByPrice("asc");
-        setPriceActive((prev) => !prev);
-      },
-      active: priceActive,
+      onPress: () => {},
     },
     {
       label: "Property Type",
@@ -56,23 +49,6 @@ export const HeaderFilterButtons = ({}: {}) => {
       style={{ marginVertical: 10 }}
       showsHorizontalScrollIndicator={false}
       renderItem={({ item, index }) => {
-        // if (item.iconName) {
-        //   return (
-        //     <Button
-        //       appearance={"ghost"}
-        //       style={[styles.button, { width: 48 }]}
-        //       onPress={item.onPress}
-        //       accessoryLeft={
-        //         <MaterialCommunityIcons
-        //           name={item.iconName as any}
-        //           size={20}
-        //           color={theme["color-primary-500"]}
-        //         />
-        //       }
-        //     ></Button>
-        //   );
-        // }
-
         return (
           <Button
             appearance={"ghost"}

@@ -16,12 +16,14 @@ import { Text } from "@ui-kitten/components";
 import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
 import axios from "axios";
 import { useUser } from "../hooks/useUser";
+import { useSelector } from "react-redux";
 
 export const SearchScreen = ({
   route,
 }: {
   route: { params: SearchScreenParams };
 }) => {
+  const properties = useSelector((state: any) => state.properties);
   const navigation = useNavigation();
   const [mapShown, setMapShown] = useState<boolean>(false);
   const [scrollAnimation] = useState(new Animated.Value(0));
@@ -30,6 +32,8 @@ export const SearchScreen = ({
   const [filteredProperties, setFilteredProperties] = useState<
     Property[] | undefined
   >([]);
+  
+  console.log(properties);
 
   let externalIDs: string[] = [];
   if (route.params?.externalIDs) {
@@ -37,7 +41,7 @@ export const SearchScreen = ({
   }
 
   const searchProperties = useSearchPropertiesQuery({
-    externalIDs,
+    externalIDs
   });
 
   const sortPropertiesByPrice = (type = "default") => {

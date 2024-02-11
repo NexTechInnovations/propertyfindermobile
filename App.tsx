@@ -3,11 +3,15 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider } from "@ui-kitten/components";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
 import { useState, useEffect } from "react";
 import * as SecureStore from "expo-secure-store";
 import { LogBox } from "react-native";
 import * as Notifications from "expo-notifications";
+import { PersistGate } from "redux-persist/integration/react";
 
+import { store, persistor } from "./store";
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
 import Navigation from "./navigation";
@@ -17,6 +21,7 @@ import { User } from "./types/user";
 import { socket } from "./constants/socket";
 import { queryKeys } from "./constants";
 import { refreshTokens } from "./services/tokens";
+import { Provider } from "react-redux";
 
 const queryClient = new QueryClient();
 LogBox.ignoreAllLogs();
@@ -116,10 +121,14 @@ export default function App() {
         <AuthContext.Provider value={{ user, setUser }}>
           <QueryClientProvider client={queryClient}>
             <ApplicationProvider {...eva} theme={theme}>
-              <SafeAreaProvider>
-                <Navigation colorScheme={colorScheme} />
-                <StatusBar />
-              </SafeAreaProvider>
+              <Provider store={store}>
+                <PersistGate persistor={persistor} loading={null}>
+                  <SafeAreaProvider>
+                    <Navigation colorScheme={colorScheme} />
+                    <StatusBar />
+                  </SafeAreaProvider>
+                </PersistGate>
+              </Provider>
             </ApplicationProvider>
           </QueryClientProvider>
         </AuthContext.Provider>

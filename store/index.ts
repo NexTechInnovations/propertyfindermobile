@@ -14,7 +14,7 @@ import propertiesSlice from "../features/propertiesSlice";
 
 const persistConfig = {
   key: "root",
-  whitelist: [],
+  whitelist: ['auth'],
   storage,
 };
 

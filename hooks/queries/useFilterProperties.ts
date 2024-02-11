@@ -3,13 +3,16 @@ import { useQuery } from "react-query";
 import { endpoints, queryKeys } from "../../constants";
 
 import { Property } from "../../types/property";
-import { useUser } from "../useUser";
 import api from "../../services/api";
 
-const fetchProperties = async (filters: any): Promise<Property[]> => {
+const fetchProperties = async ({
+  externalIDs,
+}: {
+  externalIDs?: string[];
+}): Promise<Property[]> => {
   const options = {
     params: {
-      locationExternalIDs: filters.externalIDs?.join(",") || "5002,6020",
+      locationExternalIDs: externalIDs?.join(",") || "5002,6020",
       hitsPerPage: "10",
       page: 0,
       lang: "en",
@@ -26,10 +29,14 @@ const fetchProperties = async (filters: any): Promise<Property[]> => {
   }
 };
 
-export const useSearchPropertiesQuery = (filters: any) => {
+export const useSearchPropertiesQuery = ({
+  externalIDs,
+}: {
+  externalIDs?: string[] | undefined;
+}) => {
   const { user } = useUser();
-  const queryInfo = useQuery([queryKeys.searchProperties, filters], () =>
-    fetchProperties(filters)
+  const queryInfo = useQuery(queryKeys.searchProperties, () =>
+    fetchProperties({ externalIDs })
   );
 
   const data = queryInfo?.data;

@@ -7,10 +7,10 @@ import { useUser } from "../useUser";
 import api from "../../services/api";
 
 const fetchProperty = async (propertyID: number): Promise<Property> => {
-  const response = await api.get('/properties/detail', {
+  const response = await api.get("/properties/detail", {
     params: {
-      externalID: propertyID
-    }
+      externalID: propertyID,
+    },
   });
 
   const data: Property = response.data;

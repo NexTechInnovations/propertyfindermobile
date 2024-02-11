@@ -9,34 +9,34 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Button } from "@ui-kitten/components";
 
 import { theme } from "../theme";
-import { useState } from "react";
 
-export const HeaderFilterButtons = ({
-  sortPropertiesByPrice,
-}: {
-  sortPropertiesByPrice: (type: string) => void;
-}) => {
-  const [priceActive, setPriceActive] = useState<boolean>(false);
+export const HeaderFilterButtons = ({}: {}) => {
   const filterButtons = [
+    // {
+    //   iconName: "filter-variant",
+    //   onPress: () => console.log("filter all"),
+    // },
     {
-      iconName: "filter-variant",
-      onPress: () => console.log("filter all"),
+      label: "Rent/Buy",
+      onPress: () => {},
     },
     {
-      label: "Price",
-      onPress: () => {
-        sortPropertiesByPrice("asc");
-        setPriceActive((prev) => !prev);
-      },
-      active: priceActive,
-    },
-    {
-      label: "Move-In Date",
+      label: "Property Type",
       onPress: () => console.log("move in date"),
       active: false,
     },
     {
-      label: "Pets",
+      label: "Price",
+      onPress: () => console.log("pets"),
+      active: false,
+    },
+    {
+      label: "Beds & Baths",
+      onPress: () => console.log("pets"),
+      active: false,
+    },
+    {
+      label: "Beds & Baths",
       onPress: () => console.log("pets"),
       active: false,
     },
@@ -49,23 +49,6 @@ export const HeaderFilterButtons = ({
       style={{ marginVertical: 10 }}
       showsHorizontalScrollIndicator={false}
       renderItem={({ item, index }) => {
-        if (item.iconName) {
-          return (
-            <Button
-              appearance={"ghost"}
-              style={[styles.button, { width: 48 }]}
-              onPress={item.onPress}
-              accessoryLeft={
-                <MaterialCommunityIcons
-                  name={item.iconName as any}
-                  size={20}
-                  color={theme["color-primary-500"]}
-                />
-              }
-            ></Button>
-          );
-        }
-
         return (
           <Button
             appearance={"ghost"}

@@ -88,7 +88,6 @@ export const SearchScreen = ({
         availableProperties={
           searchProperties.data ? searchProperties.data.length : undefined
         }
-        sortPropertiesByPrice={sortPropertiesByPrice}
       />
 
       {mapShown ? (

@@ -10,14 +10,17 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import propertiesSlice from "../features/propertiesSlice";
 
 const persistConfig = {
   key: "root",
-  whitelist: ["auth", "properties"],
+  whitelist: [],
   storage,
 };
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  properties: propertiesSlice,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

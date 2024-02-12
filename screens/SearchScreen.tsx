@@ -15,8 +15,8 @@ import { Property } from "../types/property";
 import { Text } from "@ui-kitten/components";
 import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
 import axios from "axios";
-import { useUser } from "../hooks/useUser";
 import { useSelector } from "react-redux";
+import BottomSheet from "@gorhom/bottom-sheet";
 
 export const SearchScreen = ({
   route,
@@ -32,7 +32,7 @@ export const SearchScreen = ({
   const [filteredProperties, setFilteredProperties] = useState<
     Property[] | undefined
   >([]);
-  
+
   console.log(properties);
 
   let externalIDs: string[] = [];
@@ -41,7 +41,7 @@ export const SearchScreen = ({
   }
 
   const searchProperties = useSearchPropertiesQuery({
-    externalIDs
+    externalIDs,
   });
 
   const sortPropertiesByPrice = (type = "default") => {
@@ -93,7 +93,12 @@ export const SearchScreen = ({
           searchProperties.data ? searchProperties.data.length : undefined
         }
       />
-
+      {/* <BottomSheet index={-1} snapPoints={[200, 500]}>
+        <View>
+          <Text>Awesome Bottom Sheet 🎉</Text>
+        </View>
+      </BottomSheet> */}
+      //TODO: bottom sheet
       {mapShown ? (
         <Map
           properties={searchProperties?.data ? searchProperties.data : []}

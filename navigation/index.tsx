@@ -41,6 +41,7 @@ import { AccountSettingsScreen } from "../screens/AccountSettingsScreen";
 import { ConversationsScreen } from "../screens/ConversationsScreen";
 import { MessagesScreen } from "../screens/MessagesScreen";
 import { useUser } from "../hooks/useUser";
+import PriceFilterScreen from "../screens/PriceFilterScreen";
 
 export default function Navigation({
   colorScheme,
@@ -138,6 +139,7 @@ function RootNavigator() {
           component={PropertyDetailsScreen}
           options={{ headerShown: false }}
         />
+
         <Stack.Screen
           name="MessageProperty"
           component={MessagePropertyScreen}

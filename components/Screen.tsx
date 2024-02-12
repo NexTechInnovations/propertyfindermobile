@@ -4,7 +4,11 @@ import {
   ViewStyle,
   Platform,
   StatusBar,
+  View,
+  Text,
 } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import BottomSheet from "@gorhom/bottom-sheet";
 
 import { Loading } from "./Loading";
 import { useLoading } from "../hooks/useLoading";

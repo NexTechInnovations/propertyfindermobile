@@ -1,4 +1,5 @@
 import { Animated, View, StyleSheet } from "react-native";
+
 import { useState, useEffect, useRef } from "react";
 import MapView from "react-native-maps";
 import LottieView from "lottie-react-native";
@@ -16,7 +17,7 @@ import { Text } from "@ui-kitten/components";
 import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import BottomSheet from "@gorhom/bottom-sheet";
+import { Loading } from "../components/Loading";
 
 export const SearchScreen = ({
   route,
@@ -68,19 +69,11 @@ export const SearchScreen = ({
     }
   }, [route]);
 
-  if (searchProperties.isLoading) {
-    return (
-      <Screen
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Text>Loading...</Text>
-      </Screen>
-    );
-  }
+  useEffect(() => {
+    navigation.navigate("PriceFilter");
+  }, []);
+
+  if (searchProperties.isLoading) return <Loading />;
 
   return (
     <Screen>
@@ -93,12 +86,7 @@ export const SearchScreen = ({
           searchProperties.data ? searchProperties.data.length : undefined
         }
       />
-      {/* <BottomSheet index={-1} snapPoints={[200, 500]}>
-        <View>
-          <Text>Awesome Bottom Sheet 🎉</Text>
-        </View>
-      </BottomSheet> */}
-      //TODO: bottom sheet
+
       {mapShown ? (
         <Map
           properties={searchProperties?.data ? searchProperties.data : []}

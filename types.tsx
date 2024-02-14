@@ -30,6 +30,7 @@ export type RootStackParamList = {
   MyProperties: undefined;
   ManageUnits: { propertyID: number };
   Review: { propertyID: number; propertyName: string };
+  PriceFilter: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
@@ -37,6 +38,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 
 export type RootTabParamList = {
   Search: undefined | SearchScreenParams;
+  PriceFilter: undefined;
   Saved: undefined;
   AccountRoot: NavigatorScreenParams<AccountTabParamList> | undefined;
 };

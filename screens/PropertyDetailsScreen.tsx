@@ -17,6 +17,8 @@ import { LocationSection } from "../components/propertyDetailsSections/LocationS
 import { ReviewSection } from "../components/propertyDetailsSections/ReviewSection";
 import { endpoints, queryKeys } from "../constants";
 import { useSelectedPropertyQuery } from "../hooks/queries/useSelectedPropertyQuery";
+import BottomSheet from "@gorhom/bottom-sheet";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export const PropertyDetailsScreen = ({
   route,

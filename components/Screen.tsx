@@ -4,7 +4,10 @@ import {
   ViewStyle,
   Platform,
   StatusBar,
+  View,
+  Text,
 } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { Loading } from "./Loading";
 import { useLoading } from "../hooks/useLoading";
@@ -20,10 +23,12 @@ export const Screen = ({
   const { loading } = useLoading();
 
   return (
-    <SafeAreaView style={[styles.container, style]}>
-      <StatusBar barStyle={"dark-content"} />
-      {loading ? <Loading /> : children}
-    </SafeAreaView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaView style={[styles.container, style]}>
+        <StatusBar barStyle={"dark-content"} />
+        {loading ? <Loading /> : children}
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 

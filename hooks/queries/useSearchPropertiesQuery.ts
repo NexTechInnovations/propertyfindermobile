@@ -15,6 +15,7 @@ const fetchProperties = async (filters: any): Promise<Property[]> => {
       lang: "en",
       rentFrequency: "monthly",
       categoryExternalID: 4,
+      ...filters,
     },
   };
 

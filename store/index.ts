@@ -11,6 +11,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import propertiesSlice from "../features/propertiesSlice";
+import bottomSheetsSlice from "../features/bottomSheetsSlice";
 
 const persistConfig = {
   key: "root",
@@ -20,6 +21,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   properties: propertiesSlice,
+  bottomSheets: bottomSheetsSlice
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -8,16 +8,21 @@ interface CustomBottomSheetProps {
   children: ReactElement;
   renderCloseButton: () => ReactElement;
   onClose: () => void;
+  title: string;
 }
 
 const CustomBottomSheet = ({
   children,
-  renderCloseButton = () => <Text>Show 0000 results</Text>,
+  renderCloseButton = () => <Text>Show results</Text>,
   onClose,
+  title,
 }: CustomBottomSheetProps) => {
   const snapPoints = useMemo(() => ["35%"], []);
   const bottomSheetRef = useRef<BottomSheet>(null);
-  const handleClose = () => bottomSheetRef.current?.close();
+  const handleClose = () => {
+    bottomSheetRef.current?.close();
+    onClose();
+  };
 
   const renderBackdrop = useCallback(
     (props: any) => (
@@ -32,24 +37,23 @@ const CustomBottomSheet = ({
 
   return (
     <BottomSheet
+      onClose={onClose}
       ref={bottomSheetRef}
       backdropComponent={renderBackdrop}
       enablePanDownToClose
       index={0}
       snapPoints={snapPoints}
     >
-      <View style={styles.contentContainer}>
-        {children}
+      <View>
+        <Text style={{ padding: 12 }}>{title}</Text>
+        <Divider style={styles.divider} />
+      </View>
 
+      <View style={styles.contentContainer}>
+        <View style={{ padding: 12 }}>{children}</View>
         <View style={styles.footer}>
           <Divider style={styles.divider} />
-          <Button
-            style={styles.button}
-            onPress={() => {
-              onClose();
-              handleClose();
-            }}
-          >
+          <Button style={styles.button} onPress={handleClose}>
             {renderCloseButton}
           </Button>
         </View>

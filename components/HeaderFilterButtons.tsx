@@ -2,6 +2,7 @@ import {
   FlatList,
   StyleProp,
   StyleSheet,
+  Text,
   TextStyle,
   ViewStyle,
 } from "react-native";
@@ -9,8 +10,13 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Button } from "@ui-kitten/components";
 
 import { theme } from "../theme";
+import CustomBottomSheet from "./CustomBottomSheet";
+import { useDispatch } from "react-redux";
+import { setPriceBottomSheet } from "../features/bottomSheetsSlice";
 
 export const HeaderFilterButtons = ({}: {}) => {
+  const dispatch = useDispatch();
+
   const filterButtons = [
     // {
     //   iconName: "filter-variant",
@@ -18,7 +24,7 @@ export const HeaderFilterButtons = ({}: {}) => {
     // },
     {
       label: "Rent/Buy",
-      onPress: () => {},
+      onPress: () => dispatch(setPriceBottomSheet(true)),
     },
     {
       label: "Property Type",

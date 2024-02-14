@@ -184,7 +184,7 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
-      initialRouteName="PriceFilter"
+      initialRouteName="Search"
       screenOptions={{
         tabBarActiveTintColor: theme["color-primary-500"],
       }}
@@ -192,16 +192,6 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="Search"
         component={SearchScreen}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="magnify" color={color} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="PriceFilter"
-        component={PriceFilterScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (

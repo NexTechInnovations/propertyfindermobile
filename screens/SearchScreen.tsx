@@ -18,6 +18,9 @@ import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQu
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { Loading } from "../components/Loading";
+import PriceFilterScreen from "./PriceFilterScreen";
+import BottomSheet from "@gorhom/bottom-sheet";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export const SearchScreen = ({
   route,
@@ -33,8 +36,6 @@ export const SearchScreen = ({
   const [filteredProperties, setFilteredProperties] = useState<
     Property[] | undefined
   >([]);
-
-  console.log(properties);
 
   let externalIDs: string[] = [];
   if (route.params?.externalIDs) {
@@ -69,103 +70,100 @@ export const SearchScreen = ({
     }
   }, [route]);
 
-  useEffect(() => {
-    navigation.navigate("PriceFilter");
-  }, []);
-
   if (searchProperties.isLoading) return <Loading />;
 
   return (
-    <Screen>
-      <AnimatedListHeader
-        scrollAnimation={scrollAnimation}
-        setMapShown={setMapShown}
-        mapShown={mapShown}
-        location={location ? location : "Find a Location"}
-        availableProperties={
-          searchProperties.data ? searchProperties.data.length : undefined
-        }
-      />
-
-      {mapShown ? (
-        <Map
-          properties={searchProperties?.data ? searchProperties.data : []}
-          mapRef={mapRef}
+      <Screen>
+        <AnimatedListHeader
+          scrollAnimation={scrollAnimation}
+          setMapShown={setMapShown}
+          mapShown={mapShown}
           location={location ? location : "Find a Location"}
-          setLocation={setLocation}
-          initialRegion={
-            route.params
-              ? {
-                  latitude: Number(route.params.lat),
-                  longitude: Number(route.params.lon),
-                  latitudeDelta: 0.4,
-                  longitudeDelta: 0.4,
-                }
-              : undefined
+          availableProperties={
+            searchProperties.data ? searchProperties.data.length : undefined
           }
         />
-      ) : (
-        <>
-          {searchProperties.data && searchProperties.data?.length > 0 ? (
-            <Animated.FlatList
-              onScroll={Animated.event(
-                [
-                  {
-                    nativeEvent: {
-                      contentOffset: {
-                        y: scrollAnimation,
+
+        {mapShown ? (
+          <Map
+            properties={searchProperties?.data ? searchProperties.data : []}
+            mapRef={mapRef}
+            location={location ? location : "Find a Location"}
+            setLocation={setLocation}
+            initialRegion={
+              route.params
+                ? {
+                    latitude: Number(route.params.lat),
+                    longitude: Number(route.params.lon),
+                    latitudeDelta: 0.4,
+                    longitudeDelta: 0.4,
+                  }
+                : undefined
+            }
+          />
+        ) : (
+          <>
+            {searchProperties.data && searchProperties.data?.length > 0 ? (
+              <Animated.FlatList
+                onScroll={Animated.event(
+                  [
+                    {
+                      nativeEvent: {
+                        contentOffset: {
+                          y: scrollAnimation,
+                        },
                       },
                     },
-                  },
-                ],
-                { useNativeDriver: true }
-              )}
-              contentContainerStyle={{ paddingTop: HEADERHEIGHT - 20 }}
-              bounces={false}
-              scrollEventThrottle={16}
-              data={searchProperties?.data}
-              keyExtractor={(item) => item.id.toString()}
-              showsVerticalScrollIndicator={false}
-              renderItem={({ item }) => (
-                <Card
-                  style={styles.card}
-                  property={item}
-                  onPress={() =>
-                    navigation.navigate("PropertyDetails", {
-                      propertyID: parseInt(item.externalID),
-                    })
-                  }
-                />
-              )}
-            />
-          ) : (
-            <>
-              {route.params ? (
-                <View style={styles.lottieContainer}>
-                  <Text category={"h6"}>No Properties Found</Text>
-                  <Text appearance={"hint"}>
-                    Please search in a different location.
-                  </Text>
-                </View>
-              ) : (
-                <View style={styles.lottieContainer}>
-                  <LottieView
-                    autoPlay
-                    loop
-                    style={styles.lottie}
-                    source={require("../assets/lotties/SearchScreen.json")}
+                  ],
+                  { useNativeDriver: true }
+                )}
+                contentContainerStyle={{ paddingTop: HEADERHEIGHT - 20 }}
+                bounces={false}
+                scrollEventThrottle={16}
+                data={searchProperties?.data}
+                keyExtractor={(item) => item.id.toString()}
+                showsVerticalScrollIndicator={false}
+                renderItem={({ item }) => (
+                  <Card
+                    style={styles.card}
+                    property={item}
+                    onPress={() =>
+                      navigation.navigate("PropertyDetails", {
+                        propertyID: parseInt(item.externalID),
+                      })
+                    }
                   />
-                  <Text category={"h6"}>Begin Your Search</Text>
-                  <Text appearance={"hint"} style={styles.subHeader}>
-                    Find apartments anytime and anywhere.
-                  </Text>
-                </View>
-              )}
-            </>
-          )}
-        </>
-      )}
-    </Screen>
+                )}
+              />
+            ) : (
+              <>
+                {route.params ? (
+                  <View style={styles.lottieContainer}>
+                    <Text category={"h6"}>No Properties Found</Text>
+                    <Text appearance={"hint"}>
+                      Please search in a different location.
+                    </Text>
+                  </View>
+                ) : (
+                  <View style={styles.lottieContainer}>
+                    <LottieView
+                      autoPlay
+                      loop
+                      style={styles.lottie}
+                      source={require("../assets/lotties/SearchScreen.json")}
+                    />
+                    <Text category={"h6"}>Begin Your Search</Text>
+                    <Text appearance={"hint"} style={styles.subHeader}>
+                      Find apartments anytime and anywhere.
+                    </Text>
+                  </View>
+                )}
+              </>
+            )}
+          </>
+        )}
+      </Screen>
+     
   );
 };
 
@@ -180,5 +178,14 @@ const styles = StyleSheet.create({
   lottie: { height: 200, width: 200 },
   subHeader: {
     marginTop: 10,
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: "center",
+  },
+  containerHeadline: {
+    fontSize: 24,
+    fontWeight: "600",
+    padding: 20,
   },
 });

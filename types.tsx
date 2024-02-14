@@ -38,6 +38,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 
 export type RootTabParamList = {
   Search: undefined | SearchScreenParams;
+  PriceFilter: undefined;
   Saved: undefined;
   AccountRoot: NavigatorScreenParams<AccountTabParamList> | undefined;
 };

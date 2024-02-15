@@ -1,6 +1,6 @@
 export const getFormattedPrice = (
-  price: number,
-  locale: string,
+  price: number | string,
+  locale: string = "en-US",
   currency: string
 ): string => {
   return price.toLocaleString(locale, {

@@ -20,6 +20,7 @@ import {
   selectBottomSheets,
   setPriceBottomSheet,
 } from "../features/bottomSheetsSlice";
+import PriceRangeFilter from "../components/PriceRangeFilter";
 
 export const SearchScreen = ({
   route,
@@ -164,11 +165,9 @@ export const SearchScreen = ({
           onClose={() => dispatch(setPriceBottomSheet(false))}
           renderCloseButton={() => <Text>Show Properties</Text>}
         >
-          <Text>Awesome bottom sheet ❤️‍🔥</Text>
+          <PriceRangeFilter />
         </CustomBottomSheet>
       )}
-
-      
     </Screen>
   );
 };

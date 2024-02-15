@@ -1,64 +1,76 @@
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import React from "react";
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
 import { theme } from "../theme";
-import { Row } from "./Row";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Divider, Input } from "@ui-kitten/components";
+import { Button, Divider, Input } from "@ui-kitten/components";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProperties, setFilters } from "../features/propertiesSlice";
-import { getFormattedPrice } from "../utils/getFormattedPrice";
 import { getFormattedNumber } from "../utils/getFormattedNumber";
+import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
 
 const PriceRangeFilter = () => {
+  const [price, setPrice] = useState({
+    priceMin: "",
+    priceMax: "",
+  });
+
   const dispatch = useDispatch();
-  const {
-    filters: { priceMin, priceMax },
-  } = useSelector(selectProperties);
+  const { filters } = useSelector(selectProperties);
 
-  const handleChangeMinPrice = (newValue: any) => {
-    dispatch(
-      setFilters({
-        priceMin: getFormattedNumber(newValue),
-      })
-    );
-  };
-  const handleChangeMaxPrice = (newValue: any) => {
-    dispatch(
-      setFilters({
-        priceMax: getFormattedNumber(newValue),
-      })
-    );
-  };
+  const searchProperties = useSearchPropertiesQuery({
+    ...filters,
+    priceMax: price.priceMax.split(",").join(""),
+    priceMin: price.priceMin.split(",").join(""),
+  });
 
-  console.log(priceMin, priceMax);
+  const handleSubmit = (newValue: any) => {
+    // dispatch(
+    //   setFilters({
+    //     priceMax: price.priceMax.split(",").join(""),
+    //     priceMin: price.priceMin.split(",").join(""),
+    //   })
+    // );
+    searchProperties.refetch();
+  };
 
   return (
     <View style={styles.container}>
-      <Input
-        style={styles.input}
-        onChangeText={handleChangeMinPrice}
-        value={priceMin}
-        placeholder="Min. Price"
-        autoCapitalize="none"
-        keyboardType="numeric"
-        autoCorrect={false}
-      />
-      <Divider style={{ width: 12, backgroundColor: theme['color-gray'] }} />
-      <Input
-        style={styles.input}
-        value={priceMax}
-        onChangeText={handleChangeMaxPrice}
-        placeholder="Max. Price"
-        autoCapitalize="none"
-        keyboardType="numeric"
-        autoCorrect={false}
-      />
+      <View style={styles.contentContainer}>
+        <Input
+          style={styles.input}
+          onChangeText={(newValue) =>
+            setPrice((prev: any) => ({
+              ...prev,
+              priceMin: getFormattedNumber(newValue),
+            }))
+          }
+          value={price.priceMin}
+          placeholder="Min. Price"
+          autoCapitalize="none"
+          keyboardType="numeric"
+          autoCorrect={false}
+        />
+        <Divider style={{ width: 12, backgroundColor: theme["color-gray"] }} />
+        <Input
+          style={styles.input}
+          value={price.priceMax}
+          onChangeText={(newValue) =>
+            setPrice((prev: any) => ({
+              ...prev,
+              priceMax: getFormattedNumber(newValue),
+            }))
+          }
+          placeholder="Max. Price"
+          autoCapitalize="none"
+          keyboardType="numeric"
+          autoCorrect={false}
+        />
+      </View>
+      <View>
+        <Divider style={{ marginTop: 12 }} />
+        <Button onPress={handleSubmit} style={styles.button}>
+          Show Results
+        </Button>
+      </View>
     </View>
   );
 };
@@ -67,6 +79,13 @@ export default PriceRangeFilter;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+  contentContainer: {
     width: "100%",
     display: "flex",
     flexDirection: "row",
@@ -76,5 +95,10 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
+  },
+  button: {
+    alignSelf: "flex-end",
+    margin: 12,
+    color: "white !important",
   },
 });

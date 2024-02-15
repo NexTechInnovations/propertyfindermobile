@@ -8,6 +8,7 @@ interface CustomBottomSheetProps {
   children: ReactElement;
   renderCloseButton: () => ReactElement;
   onClose: () => void;
+  onSubmit: () => void;
   title: string;
 }
 
@@ -15,10 +16,12 @@ const CustomBottomSheet = ({
   children,
   renderCloseButton = () => <Text>Show results</Text>,
   onClose,
+  onSubmit,
   title,
 }: CustomBottomSheetProps) => {
   const snapPoints = useMemo(() => ["35%"], []);
   const bottomSheetRef = useRef<BottomSheet>(null);
+
   const handleClose = () => {
     bottomSheetRef.current?.close();
     onClose();
@@ -51,12 +54,7 @@ const CustomBottomSheet = ({
 
       <View style={styles.contentContainer}>
         <View style={{ padding: 12 }}>{children}</View>
-        <View style={styles.footer}>
-          <Divider style={styles.divider} />
-          <Button style={styles.button} onPress={handleClose}>
-            {renderCloseButton}
-          </Button>
-        </View>
+        
       </View>
     </BottomSheet>
   );

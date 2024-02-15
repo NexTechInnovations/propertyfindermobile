@@ -10,11 +10,6 @@ const fetchProperties = async (filters: any): Promise<Property[]> => {
   const options = {
     params: {
       locationExternalIDs: filters.externalIDs?.join(",") || "5002,6020",
-      hitsPerPage: "10",
-      page: 0,
-      lang: "en",
-      rentFrequency: "monthly",
-      categoryExternalID: 4,
       ...filters,
     },
   };

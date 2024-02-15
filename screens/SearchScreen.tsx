@@ -21,6 +21,7 @@ import {
   setPriceBottomSheet,
 } from "../features/bottomSheetsSlice";
 import PriceRangeFilter from "../components/PriceRangeFilter";
+import { selectProperties } from "../features/propertiesSlice";
 
 export const SearchScreen = ({
   route,
@@ -34,7 +35,8 @@ export const SearchScreen = ({
     Property[] | undefined
   >([]);
 
-  const properties = useSelector((state: any) => state.properties);
+  const { filters } = useSelector(selectProperties);
+
   const { priceFilter: priceFilterShown } = useSelector(
     (state: any) => state.bottomSheets
   );
@@ -50,6 +52,7 @@ export const SearchScreen = ({
 
   const searchProperties = useSearchPropertiesQuery({
     externalIDs,
+    ...filters,
   });
 
   useEffect(() => {
@@ -64,10 +67,9 @@ export const SearchScreen = ({
         },
       });
     }
-  }, [route]);
+  }, [route, filters]);
 
   if (searchProperties.isLoading) return <Loading />;
-
   return (
     <Screen>
       <AnimatedListHeader
@@ -163,6 +165,7 @@ export const SearchScreen = ({
         <CustomBottomSheet
           title="Price"
           onClose={() => dispatch(setPriceBottomSheet(false))}
+          onSubmit={() => searchProperties.refetch()}
           renderCloseButton={() => <Text>Show Properties</Text>}
         >
           <PriceRangeFilter />

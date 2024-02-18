@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectProperties, setFilters } from "../features/propertiesSlice";
 import { getFormattedNumber } from "../utils/getFormattedNumber";
 import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
+import { setPriceBottomSheet } from "../features/bottomSheetsSlice";
 
 const PriceRangeFilter = () => {
   const [price, setPrice] = useState({
@@ -29,6 +30,7 @@ const PriceRangeFilter = () => {
         priceMin: price.priceMin.split(",").join(""),
       })
     );
+    dispatch(setPriceBottomSheet(false));
     searchProperties.refetch();
   };
 

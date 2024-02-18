@@ -6,7 +6,7 @@ const api: AxiosInstance = axios.create({
   timeout: 10000, // Set a timeout for requests (in milliseconds)
   headers: {
     "Content-Type": "application/json",
-    "X-RapidAPI-Key": "2e926eb412mshb9736914e0f4f09p15e9bajsnc1547b423793",
+    "X-RapidAPI-Key": "8d460f8ef4msha149c58b6ca1fd9p1cbc49jsnce423baa386e",
     "X-RapidAPI-Host": "bayut.p.rapidapi.com",
   },
 });

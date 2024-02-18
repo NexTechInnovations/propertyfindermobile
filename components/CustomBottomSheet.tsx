@@ -19,7 +19,7 @@ const CustomBottomSheet = ({
   onSubmit,
   title,
 }: CustomBottomSheetProps) => {
-  const snapPoints = useMemo(() => ["35%"], []);
+  const snapPoints = useMemo(() => ["50%"], []);
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   const handleClose = () => {
@@ -53,8 +53,7 @@ const CustomBottomSheet = ({
       </View>
 
       <View style={styles.contentContainer}>
-        <View style={{ padding: 12 }}>{children}</View>
-        
+        <View style={{ padding: 12, width: "100%", flex: 1 }}>{children}</View>
       </View>
     </BottomSheet>
   );

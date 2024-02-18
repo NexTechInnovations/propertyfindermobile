@@ -12,7 +12,10 @@ import { Button } from "@ui-kitten/components";
 import { theme } from "../theme";
 import CustomBottomSheet from "./CustomBottomSheet";
 import { useDispatch } from "react-redux";
-import { setPriceBottomSheet } from "../features/bottomSheetsSlice";
+import {
+  setPriceBottomSheet,
+  setPropertyTypeBottomSheet,
+} from "../features/bottomSheetsSlice";
 
 export const HeaderFilterButtons = ({}: {}) => {
   const dispatch = useDispatch();
@@ -28,7 +31,7 @@ export const HeaderFilterButtons = ({}: {}) => {
     },
     {
       label: "Property Type",
-      onPress: () => console.log("move in date"),
+      onPress: () => dispatch(setPropertyTypeBottomSheet(true)),
       active: false,
     },
     {

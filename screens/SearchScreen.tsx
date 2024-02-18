@@ -12,16 +12,13 @@ import { Card } from "../components/Card";
 import { AnimatedListHeader } from "../components/AnimatedListHeader";
 import { Map } from "../components/Map";
 import { SearchScreenParams } from "../types";
-import { Property } from "../types/property";
 import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
 import { Loading } from "../components/Loading";
 import CustomBottomSheet from "../components/CustomBottomSheet";
-import {
-  selectBottomSheets,
-  setPriceBottomSheet,
-} from "../features/bottomSheetsSlice";
+import { setPriceBottomSheet, setPropertyTypeBottomSheet } from "../features/bottomSheetsSlice";
 import PriceRangeFilter from "../components/PriceRangeFilter";
 import { selectProperties } from "../features/propertiesSlice";
+import PropertyTypeFilter from "../components/PropertyTypeFilter";
 
 export const SearchScreen = ({
   route,
@@ -34,9 +31,10 @@ export const SearchScreen = ({
 
   const { filters } = useSelector(selectProperties);
 
-  const { priceFilter: priceFilterShown } = useSelector(
-    (state: any) => state.bottomSheets
-  );
+  const {
+    priceFilter: priceFilterShown,
+    propertyTypeFilter: propertyTypeFilterShown,
+  } = useSelector((state: any) => state.bottomSheets);
 
   const mapRef = useRef<MapView | null>(null);
   const navigation = useNavigation();
@@ -166,6 +164,17 @@ export const SearchScreen = ({
           renderCloseButton={() => <Text>Show Properties</Text>}
         >
           <PriceRangeFilter />
+        </CustomBottomSheet>
+      )}
+
+      {propertyTypeFilterShown && (
+        <CustomBottomSheet
+          title="Property Type"
+          onClose={() => dispatch(setPropertyTypeBottomSheet(false))}
+          onSubmit={() => searchProperties.refetch()}
+          renderCloseButton={() => <Text>Show Properties</Text>}
+        >
+          <PropertyTypeFilter />
         </CustomBottomSheet>
       )}
     </Screen>

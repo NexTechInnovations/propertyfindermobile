@@ -31,9 +31,6 @@ export const SearchScreen = ({
   const [mapShown, setMapShown] = useState<boolean>(false);
   const [scrollAnimation] = useState(new Animated.Value(0));
   const [location, setLocation] = useState<string | undefined>(undefined);
-  const [filteredProperties, setFilteredProperties] = useState<
-    Property[] | undefined
-  >([]);
 
   const { filters } = useSelector(selectProperties);
 
@@ -118,7 +115,7 @@ export const SearchScreen = ({
               contentContainerStyle={{ paddingTop: HEADERHEIGHT - 20 }}
               bounces={false}
               scrollEventThrottle={16}
-              data={searchProperties?.data}
+              data={searchProperties?.data.sort((a, b) => a.price - b.price)}
               keyExtractor={(item) => item.id.toString()}
               showsVerticalScrollIndicator={false}
               renderItem={({ item }) => (

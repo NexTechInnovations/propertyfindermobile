@@ -23,12 +23,12 @@ const PriceRangeFilter = () => {
   });
 
   const handleSubmit = (newValue: any) => {
-    // dispatch(
-    //   setFilters({
-    //     priceMax: price.priceMax.split(",").join(""),
-    //     priceMin: price.priceMin.split(",").join(""),
-    //   })
-    // );
+    dispatch(
+      setFilters({
+        priceMax: price.priceMax.split(",").join(""),
+        priceMin: price.priceMin.split(",").join(""),
+      })
+    );
     searchProperties.refetch();
   };
 

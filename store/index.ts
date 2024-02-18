@@ -15,13 +15,13 @@ import bottomSheetsSlice from "../features/bottomSheetsSlice";
 
 const persistConfig = {
   key: "root",
-  whitelist: ['auth'],
+  whitelist: ["auth", "properties"],
   storage,
 };
 
 const rootReducer = combineReducers({
   properties: propertiesSlice,
-  bottomSheets: bottomSheetsSlice
+  bottomSheets: bottomSheetsSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

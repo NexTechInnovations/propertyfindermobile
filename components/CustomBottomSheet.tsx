@@ -53,8 +53,7 @@ const CustomBottomSheet = ({
       </View>
 
       <View style={styles.contentContainer}>
-        <View style={{ padding: 12 }}>{children}</View>
-        
+        <View style={{ padding: 12, width: "100%", flex: 1 }}>{children}</View>
       </View>
     </BottomSheet>
   );

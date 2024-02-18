@@ -19,7 +19,7 @@ const CustomBottomSheet = ({
   onSubmit,
   title,
 }: CustomBottomSheetProps) => {
-  const snapPoints = useMemo(() => ["35%"], []);
+  const snapPoints = useMemo(() => ["50%"], []);
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   const handleClose = () => {

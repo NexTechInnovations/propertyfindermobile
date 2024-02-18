@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState: any = {
   priceFilter: false,
+  propertyTypeFilter: false,
 };
 
 const bottomSheetsSlice = createSlice({
@@ -12,12 +13,15 @@ const bottomSheetsSlice = createSlice({
     setPriceBottomSheet: (state, action) => {
       state.priceFilter = action.payload;
     },
+    setPropertyTypeBottomSheet: (state, action) => {
+      state.propertyTypeFilter = action.payload;
+    },
   },
 
   extraReducers: (builder) => {},
 });
 
-export const { setPriceBottomSheet } = bottomSheetsSlice.actions;
-export const selectBottomSheets = (state: any) => state;
+export const { setPriceBottomSheet, setPropertyTypeBottomSheet } =
+  bottomSheetsSlice.actions;
 
 export default bottomSheetsSlice.reducer;

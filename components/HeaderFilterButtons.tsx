@@ -27,7 +27,7 @@ export const HeaderFilterButtons = ({}: {}) => {
     // },
     {
       label: "Rent/Buy",
-      onPress: () => dispatch(setPriceBottomSheet(true)),
+      onPress: () => console.log("Rent/Buy"),
     },
     {
       label: "Property Type",
@@ -36,7 +36,7 @@ export const HeaderFilterButtons = ({}: {}) => {
     },
     {
       label: "Price",
-      onPress: () => console.log("pets"),
+      onPress: () => dispatch(setPriceBottomSheet(true)),
       active: false,
     },
     {

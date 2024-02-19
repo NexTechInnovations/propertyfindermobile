@@ -49,7 +49,7 @@ const CustomBottomSheet = ({
     const keyboardDidShowListener = Keyboard.addListener(
       "keyboardDidShow",
       () => {
-        setSnapPoints(["75%"]);
+        setSnapPoints(["65%"]);
       }
     );
     const keyboardDidHideListener = Keyboard.addListener(

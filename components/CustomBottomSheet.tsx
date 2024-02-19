@@ -1,7 +1,14 @@
 import BottomSheet, { BottomSheetBackdrop } from "@gorhom/bottom-sheet";
 import { Button, Divider } from "@ui-kitten/components";
-import { ReactElement, useCallback, useMemo, useRef } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  ReactElement,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { Keyboard, StyleSheet, Text, View } from "react-native";
 import { theme } from "../theme";
 
 interface CustomBottomSheetProps {
@@ -19,7 +26,7 @@ const CustomBottomSheet = ({
   onSubmit,
   title,
 }: CustomBottomSheetProps) => {
-  const snapPoints = useMemo(() => ["50%"], []);
+  const [snapPoints, setSnapPoints] = useState(["50%"]);
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   const handleClose = () => {
@@ -37,6 +44,26 @@ const CustomBottomSheet = ({
     ),
     []
   );
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      "keyboardDidShow",
+      () => {
+        setSnapPoints(["75%"]);
+      }
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      "keyboardDidHide",
+      () => {
+        setSnapPoints(["50%"]);
+      }
+    );
+
+    return () => {
+      keyboardDidHideListener.remove();
+      keyboardDidShowListener.remove();
+    };
+  }, []);
 
   return (
     <BottomSheet

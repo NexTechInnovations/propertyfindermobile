@@ -26,7 +26,7 @@ const CustomBottomSheet = ({
   onSubmit,
   title,
 }: CustomBottomSheetProps) => {
-  const [snapPoints, setSnapPoints] = useState(["50%"]);
+  const [snapPoints, setSnapPoints] = useState(["35%"]);
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   const handleClose = () => {
@@ -55,7 +55,7 @@ const CustomBottomSheet = ({
     const keyboardDidHideListener = Keyboard.addListener(
       "keyboardDidHide",
       () => {
-        setSnapPoints(["50%"]);
+        setSnapPoints(["35%"]);
       }
     );
 

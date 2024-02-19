@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const initialState: any = {
   priceFilter: false,
   propertyTypeFilter: false,
+  categoryFilter: false,
 };
 
 const bottomSheetsSlice = createSlice({
@@ -16,12 +17,18 @@ const bottomSheetsSlice = createSlice({
     setPropertyTypeBottomSheet: (state, action) => {
       state.propertyTypeFilter = action.payload;
     },
+    setCategoryBottomSheet: (state, action) => {
+      state.categoryFilter = action.payload;
+    },
   },
 
   extraReducers: (builder) => {},
 });
 
-export const { setPriceBottomSheet, setPropertyTypeBottomSheet } =
-  bottomSheetsSlice.actions;
+export const {
+  setPriceBottomSheet,
+  setPropertyTypeBottomSheet,
+  setCategoryBottomSheet,
+} = bottomSheetsSlice.actions;
 
 export default bottomSheetsSlice.reducer;

@@ -13,6 +13,7 @@ import { theme } from "../theme";
 import CustomBottomSheet from "./CustomBottomSheet";
 import { useDispatch } from "react-redux";
 import {
+  setCategoryBottomSheet,
   setPriceBottomSheet,
   setPropertyTypeBottomSheet,
 } from "../features/bottomSheetsSlice";
@@ -27,7 +28,7 @@ export const HeaderFilterButtons = ({}: {}) => {
     // },
     {
       label: "Rent/Buy",
-      onPress: () => console.log("Rent/Buy"),
+      onPress: () => dispatch(setCategoryBottomSheet(true)),
     },
     {
       label: "Property Type",

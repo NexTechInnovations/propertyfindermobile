@@ -21,7 +21,7 @@ const bottomSheetsSlice = createSlice({
     setCategoryBottomSheet: (state, action) => {
       state.categoryFilter = action.payload;
     },
-    setBedsAndBathsFilter: (state, action) => {
+    setBedsAndBathsBottomSheet: (state, action) => {
       state.bedsAndBathsFilter = action.payload;
     },
   },
@@ -33,7 +33,7 @@ export const {
   setPriceBottomSheet,
   setPropertyTypeBottomSheet,
   setCategoryBottomSheet,
-  setBedsAndBathsFilter,
+  setBedsAndBathsBottomSheet,
 } = bottomSheetsSlice.actions;
 
 export default bottomSheetsSlice.reducer;

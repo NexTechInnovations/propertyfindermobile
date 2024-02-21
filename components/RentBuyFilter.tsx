@@ -8,13 +8,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCategoryBottomSheet } from "../features/bottomSheetsSlice";
 
 const Categories = [
-    { title: "Buy", index: 0, value: "for-sale" },
-    { title: "Rent", index: 1, value: "for-rent" },
+  { title: "Buy", index: 0, value: "for-sale" },
+  { title: "Rent", index: 1, value: "for-rent" },
 ];
 
 const RentBuyFilter = () => {
-    const { filters } = useSelector(selectProperties);
-    const [selectedCategory, setSelectedCategory] = useState<any>(Categories[0]);
+  const { filters } = useSelector(selectProperties);
+  const [selectedCategory, setSelectedCategory] = useState<any>(Categories[0]);
   const searchProperties = useSearchPropertiesQuery({
     ...filters,
     purpose: selectedCategory.value,

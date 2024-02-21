@@ -16,7 +16,7 @@ import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQu
 import { Loading } from "../components/Loading";
 import CustomBottomSheet from "../components/CustomBottomSheet";
 import {
-  setBedsAndBathsFilter,
+  setBedsAndBathsBottomSheet,
   setCategoryBottomSheet,
   setPriceBottomSheet,
   setPropertyTypeBottomSheet,
@@ -195,7 +195,7 @@ export const SearchScreen = ({
       {bedsAndBathsFilterShown && (
         <CustomBottomSheet
           title="Beds & Baths"
-          onClose={() => dispatch(setBedsAndBathsFilter(false))}
+          onClose={() => dispatch(setBedsAndBathsBottomSheet(false))}
         >
           <BedsAndBaths />
         </CustomBottomSheet>

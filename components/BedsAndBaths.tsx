@@ -1,42 +1,100 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
 import { useState } from "react";
 import { theme } from "../theme";
 import { Button, Divider } from "@ui-kitten/components";
+import { handleAddRemoveOption } from "../utils/addRemoveOption";
+import { selectProperties, setFilters } from "../features/propertiesSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
+import { setBedsAndBathsBottomSheet } from "../features/bottomSheetsSlice";
 
 const bedrooms = ["1", "2", "3", "4", "5"];
 const bathrooms = ["1", "2", "3", "4", "5"];
 
 const BedsAndBaths = () => {
-  const [bedsAndBaths, setBedsAndBaths] = useState({
-    baths: [],
-    beds: [],
+  const [activeBedrooms, setActiveBedrooms] = useState<string[]>([]);
+  const [activeBaths, setActiveBaths] = useState<string[]>([]);
+  const [bedsAndBaths, setBedsAndBaths] = useState<any>({
+    roomsMin: 0,
+    roomsMax: 0,
+    bathsMin: 0,
   });
+  const { filters } = useSelector(selectProperties);
+  const searchProperties = useSearchPropertiesQuery({
+    ...filters,
+  });
+  const dispatch = useDispatch();
+
+  const buttonStyle = (active: boolean) => ({
+    backgroundColor: active ? theme["color-primary-500"] : "gray",
+  });
+
+  const handleSubmit = () => {
+    setFilters({ ...bedsAndBaths });
+    searchProperties.refetch();
+    dispatch(setBedsAndBathsBottomSheet(false));
+  };
 
   return (
     <View style={styles.container}>
       <View style={{ width: "100%" }}>
-        <Text style={styles.title}>Baths</Text>
+        <Text style={styles.title}>Beds</Text>
         <View style={styles.list}>
-          {bedrooms.map((room) => (
-            <View style={styles.card}>
+          {bedrooms.map((room: string) => (
+            <TouchableOpacity
+              onPress={() =>
+                handleAddRemoveOption(
+                  room,
+                  setActiveBedrooms,
+                  activeBedrooms
+                ).then((data: any) => {
+                  setBedsAndBaths((prev: any) => ({
+                    ...prev,
+                    roomsMin: Math.min(...data),
+                    roomsMax: Math.max(...data),
+                  }));
+                })
+              }
+              style={[styles.card, buttonStyle(activeBedrooms.includes(room))]}
+            >
               <Text style={styles.cardText}>{room}</Text>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       </View>
       <View style={{ width: "100%" }}>
-        <Text style={styles.title}>Beds</Text>
+        <Text style={styles.title}>Baths</Text>
         <View style={styles.list}>
           {bathrooms.map((bath) => (
-            <View style={styles.card}>
+            <TouchableOpacity
+              onPress={() =>
+                handleAddRemoveOption(bath, setActiveBaths, activeBaths).then(
+                  (data: any) => {
+                    setBedsAndBaths((prev: any) => ({
+                      ...prev,
+                      bathsMin: Math.min(...data),
+                    }));
+                  }
+                )
+              }
+              style={[styles.card, buttonStyle(activeBaths.includes(bath))]}
+            >
               <Text style={styles.cardText}>{bath}</Text>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       </View>
       <View>
         <Divider style={{ marginTop: 12 }} />
-        <Button style={styles.button}>Show Results</Button>
+        <Button style={styles.button} onPress={handleSubmit}>
+          Show Results
+        </Button>
       </View>
     </View>
   );
@@ -49,7 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
     display: "flex",
     flexDirection: "column",
-    gap: 12
+    gap: 12,
   },
   card: {
     width: 32,
@@ -57,7 +115,6 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: theme["color-primary-500"],
     borderRadius: 6,
   },
   cardText: {

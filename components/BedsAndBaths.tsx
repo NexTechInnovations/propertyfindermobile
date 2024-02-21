@@ -36,7 +36,7 @@ const BedsAndBaths = () => {
   });
 
   const handleSubmit = () => {
-    setFilters({ ...bedsAndBaths });
+    dispatch(setFilters({ ...bedsAndBaths }));
     searchProperties.refetch();
     dispatch(setBedsAndBathsBottomSheet(false));
   };

@@ -8,7 +8,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { Keyboard, StyleSheet, Text, View } from "react-native";
+import { Keyboard, ScrollView, StyleSheet, Text, View } from "react-native";
 import { theme } from "../theme";
 
 interface CustomBottomSheetProps {
@@ -73,7 +73,9 @@ const CustomBottomSheet = ({
       </View>
 
       <View style={styles.contentContainer}>
-        <View style={{ padding: 12, width: "100%", flex: 1 }}>{children}</View>
+        <ScrollView style={{ padding: 12, width: "100%", flex: 1 }}>
+          {children}
+        </ScrollView>
       </View>
     </BottomSheet>
   );

@@ -4,6 +4,7 @@ const initialState: any = {
   priceFilter: false,
   propertyTypeFilter: false,
   categoryFilter: false,
+  bedsAndBathsFilter: false,
 };
 
 const bottomSheetsSlice = createSlice({
@@ -20,6 +21,9 @@ const bottomSheetsSlice = createSlice({
     setCategoryBottomSheet: (state, action) => {
       state.categoryFilter = action.payload;
     },
+    setBedsAndBathsFilter: (state, action) => {
+      state.bedsAndBathsFilter = action.payload;
+    },
   },
 
   extraReducers: (builder) => {},
@@ -29,6 +33,7 @@ export const {
   setPriceBottomSheet,
   setPropertyTypeBottomSheet,
   setCategoryBottomSheet,
+  setBedsAndBathsFilter,
 } = bottomSheetsSlice.actions;
 
 export default bottomSheetsSlice.reducer;

@@ -13,6 +13,7 @@ import { theme } from "../theme";
 import CustomBottomSheet from "./CustomBottomSheet";
 import { useDispatch } from "react-redux";
 import {
+  setBedsAndBathsFilter,
   setCategoryBottomSheet,
   setPriceBottomSheet,
   setPropertyTypeBottomSheet,
@@ -42,12 +43,7 @@ export const HeaderFilterButtons = ({}: {}) => {
     },
     {
       label: "Beds & Baths",
-      onPress: () => console.log("pets"),
-      active: false,
-    },
-    {
-      label: "Beds & Baths",
-      onPress: () => console.log("pets"),
+      onPress: () => dispatch(setBedsAndBathsFilter(true)),
       active: false,
     },
   ];

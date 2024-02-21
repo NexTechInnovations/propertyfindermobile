@@ -13,26 +13,19 @@ import { theme } from "../theme";
 
 interface CustomBottomSheetProps {
   children: ReactElement;
-  renderCloseButton: () => ReactElement;
+  renderCloseButton?: () => ReactElement;
   onClose: () => void;
-  onSubmit: () => void;
+  onSubmit?: () => void;
   title: string;
 }
 
 const CustomBottomSheet = ({
   children,
-  renderCloseButton = () => <Text>Show results</Text>,
   onClose,
-  onSubmit,
   title,
 }: CustomBottomSheetProps) => {
   const [snapPoints, setSnapPoints] = useState(["35%"]);
   const bottomSheetRef = useRef<BottomSheet>(null);
-
-  const handleClose = () => {
-    bottomSheetRef.current?.close();
-    onClose();
-  };
 
   const renderBackdrop = useCallback(
     (props: any) => (

@@ -16,6 +16,7 @@ import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQu
 import { Loading } from "../components/Loading";
 import CustomBottomSheet from "../components/CustomBottomSheet";
 import {
+  setBedsAndBathsFilter,
   setCategoryBottomSheet,
   setPriceBottomSheet,
   setPropertyTypeBottomSheet,
@@ -24,6 +25,7 @@ import PriceRangeFilter from "../components/PriceRangeFilter";
 import { selectProperties } from "../features/propertiesSlice";
 import PropertyTypeFilter from "../components/PropertyTypeFilter";
 import RentBuyFilter from "../components/RentBuyFilter";
+import BedsAndBaths from "../components/BedsAndBaths";
 
 export const SearchScreen = ({
   route,
@@ -40,6 +42,7 @@ export const SearchScreen = ({
     priceFilter: priceFilterShown,
     propertyTypeFilter: propertyTypeFilterShown,
     categoryFilter: categoryFilterShown,
+    bedsAndBathsFilter: bedsAndBathsFilterShown,
   } = useSelector((state: any) => state.bottomSheets);
 
   const mapRef = useRef<MapView | null>(null);
@@ -166,8 +169,6 @@ export const SearchScreen = ({
         <CustomBottomSheet
           title="Price"
           onClose={() => dispatch(setPriceBottomSheet(false))}
-          onSubmit={() => searchProperties.refetch()}
-          renderCloseButton={() => <Text>Show Properties</Text>}
         >
           <PriceRangeFilter />
         </CustomBottomSheet>
@@ -177,8 +178,6 @@ export const SearchScreen = ({
         <CustomBottomSheet
           title="Property Type"
           onClose={() => dispatch(setPropertyTypeBottomSheet(false))}
-          onSubmit={() => searchProperties.refetch()}
-          renderCloseButton={() => <Text>Show Properties</Text>}
         >
           <PropertyTypeFilter />
         </CustomBottomSheet>
@@ -188,10 +187,17 @@ export const SearchScreen = ({
         <CustomBottomSheet
           title="Category"
           onClose={() => dispatch(setCategoryBottomSheet(false))}
-          onSubmit={() => searchProperties.refetch()}
-          renderCloseButton={() => <Text>Show Properties</Text>}
         >
           <RentBuyFilter />
+        </CustomBottomSheet>
+      )}
+
+      {bedsAndBathsFilterShown && (
+        <CustomBottomSheet
+          title="Beds & Baths"
+          onClose={() => dispatch(setBedsAndBathsFilter(false))}
+        >
+          <BedsAndBaths />
         </CustomBottomSheet>
       )}
     </Screen>

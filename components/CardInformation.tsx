@@ -1,4 +1,4 @@
-import { View, StyleSheet, Pressable } from "react-native";
+import { View, StyleSheet, Pressable, Linking } from "react-native";
 import { Text, Button, Divider } from "@ui-kitten/components";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -50,8 +50,9 @@ export const CardInformation = ({
   const manageUnitsNavigation = () =>
     navigation.navigate("ManageUnits", { propertyID: property.id });
 
-  const emailNavigation = () =>
-    navigation.navigate("MessageProperty", { propertyID: property.id });
+  const emailNavigation = (email: string) =>
+    // navigation.navigate("MessageProperty", { propertyID: property.id });
+    Linking.openURL('mailto:support@example.com?subject=SendMail&body=Description') 
 
   const editPropertyNavigation = () =>
     navigation.navigate("EditProperty", { propertyID: property.id });
@@ -71,6 +72,7 @@ export const CardInformation = ({
 
   const address = getPropertyFormattedLocation(property.location);
 
+  
   const DefaultInfo = () => (
     <>
       {property?.rentLow && property?.rentHigh && (
@@ -101,7 +103,7 @@ export const CardInformation = ({
       <Text category={"c1"} style={styles.defaultMarginTop}>
         {getFormattedPrice(property.price, "en-US", "USD")}
       </Text>
-
+        
       {/* <Text category={"c1"}>
         {property.city}, {property.state} {property.zip}
       </Text> */}
@@ -127,7 +129,7 @@ export const CardInformation = ({
             styles.button,
           ]}
           size="small"
-          onPress={emailNavigation}
+          onPress={() => emailNavigation('')}
         >
           Email
         </Button>

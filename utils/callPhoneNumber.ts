@@ -15,5 +15,5 @@ const cleanPhoneNumber = (str: string) => {
 };
 
 export const callPhoneNumber = (phoneNumber: string) => {
-  Linking.openURL(`tel:${cleanPhoneNumber(phoneNumber)}`);
+  Linking.openURL(`tel:${phoneNumber}`);
 };

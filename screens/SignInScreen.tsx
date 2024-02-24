@@ -8,8 +8,6 @@ import { useNavigation } from "@react-navigation/native";
 import { Screen } from "../components/Screen";
 import { ModalHeader } from "../components/ModalHeader";
 import { GoogleButton } from "../components/GoogleButton";
-import { FacebookButton } from "../components/FacebookButton";
-import { AppleButton } from "../components/AppleButton";
 import { PasswordInput } from "../components/PasswordInput";
 import { OrDivider } from "../components/OrDivider";
 import { useAuth } from "../hooks/useAuth";
@@ -129,15 +127,6 @@ export const SignInScreen = () => {
                     text="Continue with Google"
                     style={styles.button}
                     onPress={async () => await googleAuth()}
-                  />
-                  <FacebookButton
-                    text="Continue with Facebook"
-                    style={styles.button}
-                    onPress={async () => await facebookAuth()}
-                  />
-                  <AppleButton
-                    type="sign-in"
-                    onPress={async () => await appleAuth()}
                   />
                 </>
               );

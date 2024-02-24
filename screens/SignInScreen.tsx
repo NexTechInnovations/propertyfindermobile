@@ -13,11 +13,38 @@ import { AppleButton } from "../components/AppleButton";
 import { PasswordInput } from "../components/PasswordInput";
 import { OrDivider } from "../components/OrDivider";
 import { useAuth } from "../hooks/useAuth";
+import { FIREBASE_AUTH } from "../firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useUser } from "../hooks/useUser";
 
 export const SignInScreen = () => {
   const navigation = useNavigation();
   const { nativeLogin, facebookAuth, googleAuth, appleAuth } = useAuth();
+  const { login } = useUser();
+  const auth = FIREBASE_AUTH;
 
+  const signin = async (email: string, password: string) => {
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      const userData = response.user;
+
+      login({
+        ID: userData.uid,
+        firstName: "Saif",
+        lastName: "Mohamed",
+        email: userData.email,
+        allowsNotifications: true,
+        accessToken: userData.stsTokenManager.accessToken,
+        refreshToken: userData.refreshToken,
+      });
+
+      navigation.navigate("Search");
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("finally");
+    }
+  };
   return (
     <KeyboardAwareScrollView bounces={false}>
       <Screen>
@@ -35,9 +62,7 @@ export const SignInScreen = () => {
               email: yup.string().email().required("Your email is required."),
               password: yup.string().required("A password is required."),
             })}
-            onSubmit={async (values) => {
-              await nativeLogin(values);
-            }}
+            onSubmit={(values) => signin(values.email, values.password)}
           >
             {({
               values,

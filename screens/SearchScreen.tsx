@@ -26,6 +26,7 @@ import { selectProperties } from "../features/propertiesSlice";
 import PropertyTypeFilter from "../components/PropertyTypeFilter";
 import RentBuyFilter from "../components/RentBuyFilter";
 import BedsAndBaths from "../components/BedsAndBaths";
+import { useUser } from "../hooks/useUser";
 
 export const SearchScreen = ({
   route,

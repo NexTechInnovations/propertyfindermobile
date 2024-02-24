@@ -23,25 +23,25 @@ export const useUser = () => {
   const login = (user: User) => {
     setAndStoreUser(user);
     // Nothing else is working so this is my last resort
-    const searchedProperties: Property[] | undefined = queryClient.getQueryData(
-      queryKeys.searchProperties
-    );
+    // const searchedProperties: Property[] | undefined = queryClient.getQueryData(
+    //   queryKeys.searchProperties
+    // );
 
-    socket.auth = {
-      userID: user.ID,
-      username:
-        user.firstName && user.lastName
-          ? `${user.firstName} ${user.lastName}`
-          : `${user.email}`,
-    };
-    socket.connect();
-    if (searchedProperties) {
-      for (let i of searchedProperties) {
-        i.liked = false;
-        if (user.savedProperties?.includes(i.id)) i.liked = true;
-      }
-      queryClient.setQueryData(queryKeys.searchProperties, searchedProperties);
-    }
+    // socket.auth = {
+    //   userID: user.ID,
+    //   username:
+    //     user.firstName && user.lastName
+    //       ? `${user.firstName} ${user.lastName}`
+    //       : `${user.email}`,
+    // };
+    // socket.connect();
+    // if (searchedProperties) {
+    //   for (let i of searchedProperties) {
+    //     i.liked = false;
+    //     if (user.savedProperties?.includes(i.id)) i.liked = true;
+    //   }
+    //   queryClient.setQueryData(queryKeys.searchProperties, searchedProperties);
+    // }
   };
 
   const logout = async () => {

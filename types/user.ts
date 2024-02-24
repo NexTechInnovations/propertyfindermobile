@@ -1,8 +1,8 @@
 export type User = {
-  ID: number;
+  ID: string;
   firstName?: string;
   lastName?: string;
-  email: string;
+  email: string | null;
   savedProperties?: number[];
   allowsNotifications: boolean;
   pushToken?: string;

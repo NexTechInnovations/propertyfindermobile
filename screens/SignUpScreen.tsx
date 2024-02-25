@@ -12,9 +12,44 @@ import { AppleButton } from "../components/AppleButton";
 import { OrDivider } from "../components/OrDivider";
 import { PasswordInput } from "../components/PasswordInput";
 import { useAuth } from "../hooks/useAuth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { FIREBASE_AUTH } from "../firebaseConfig";
+import { useUser } from "../hooks/useUser";
+import { useNavigation } from "@react-navigation/native";
 
 export const SignUpScreen = () => {
-  const { appleAuth, facebookAuth, googleAuth, nativeRegister } = useAuth();
+  const { googleAuth } = useAuth();
+  const navigation = useNavigation();
+
+  const { login } = useUser();
+  const auth = FIREBASE_AUTH;
+
+  const signup = async (email: string, password: string) => {
+    try {
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const userData = response.user;
+
+      login({
+        ID: userData.uid,
+        firstName: "Saif",
+        lastName: "Mohamed",
+        email: userData.email,
+        allowsNotifications: true,
+        accessToken: userData.stsTokenManager.accessToken,
+        refreshToken: userData.refreshToken,
+      });
+
+      navigation.navigate("Search");
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("finally");
+    }
+  };
 
   return (
     <KeyboardAwareScrollView bounces={false}>
@@ -26,14 +61,10 @@ export const SignUpScreen = () => {
           </Text>
           <Formik
             initialValues={{
-              firstName: "",
-              lastName: "",
               email: "",
               password: "",
             }}
             validationSchema={yup.object().shape({
-              firstName: yup.string().required("Your first name is required."),
-              lastName: yup.string().required("Your last name is required."),
               email: yup.string().email().required("Your email is required."),
               password: yup
                 .string()
@@ -43,9 +74,7 @@ export const SignUpScreen = () => {
                   "Your password must have 8 characters, 1 uppercase letter, 1 lowercase letter, and 1 special character."
                 ),
             })}
-            onSubmit={async (values) => {
-              await nativeRegister(values);
-            }}
+            onSubmit={(values) => signup(values.email, values.password)}
           >
             {({
               values,
@@ -58,42 +87,6 @@ export const SignUpScreen = () => {
             }) => {
               return (
                 <>
-                  <Input
-                    style={styles.input}
-                    value={values.firstName}
-                    onChangeText={handleChange("firstName")}
-                    placeholder="Your First Name"
-                    label="First Name"
-                    autoComplete="name"
-                    textContentType="givenName"
-                    onBlur={() => setFieldTouched("firstName")}
-                    caption={
-                      touched.firstName && errors.firstName
-                        ? errors.firstName
-                        : undefined
-                    }
-                    status={
-                      touched.firstName && errors.firstName ? "danger" : "basic"
-                    }
-                  />
-                  <Input
-                    style={styles.input}
-                    value={values.lastName}
-                    onChangeText={handleChange("lastName")}
-                    placeholder="Your Last Name"
-                    label="Last Name"
-                    textContentType="familyName"
-                    autoComplete="name"
-                    onBlur={() => setFieldTouched("lastName")}
-                    caption={
-                      touched.lastName && errors.lastName
-                        ? errors.lastName
-                        : undefined
-                    }
-                    status={
-                      touched.lastName && errors.lastName ? "danger" : "basic"
-                    }
-                  />
                   <Input
                     style={styles.input}
                     value={values.email}
@@ -141,15 +134,6 @@ export const SignUpScreen = () => {
                     text="Sign up with Google"
                     style={styles.button}
                     onPress={async () => await googleAuth()}
-                  />
-                  <FacebookButton
-                    text="Sign up with Facebook"
-                    style={styles.button}
-                    onPress={async () => await facebookAuth()}
-                  />
-                  <AppleButton
-                    type="sign-up"
-                    onPress={async () => await appleAuth()}
                   />
                 </>
               );

@@ -17,7 +17,7 @@ import { useUser } from "../hooks/useUser";
 
 export const SignInScreen = () => {
   const navigation = useNavigation();
-  const { nativeLogin, facebookAuth, googleAuth, appleAuth } = useAuth();
+  const { googleAuth } = useAuth();
   const { login } = useUser();
   const auth = FIREBASE_AUTH;
 
@@ -43,6 +43,7 @@ export const SignInScreen = () => {
       console.log("finally");
     }
   };
+
   return (
     <KeyboardAwareScrollView bounces={false}>
       <Screen>

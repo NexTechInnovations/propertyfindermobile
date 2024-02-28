@@ -107,6 +107,7 @@ function RootNavigator() {
         component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
+      
       <Stack.Screen
         name="SignIn"
         component={SignInScreen}

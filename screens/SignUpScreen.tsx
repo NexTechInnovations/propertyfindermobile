@@ -16,6 +16,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FIREBASE_AUTH } from "../firebaseConfig";
 import { useUser } from "../hooks/useUser";
 import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const SignUpScreen = () => {
   const { googleAuth } = useAuth();
@@ -127,13 +128,22 @@ export const SignUpScreen = () => {
                     Sign Up
                   </Button>
 
-                  <OrDivider style={styles.orContainer} />
+                  <TouchableOpacity
+                    style={styles.alreadyHaveAccountContainer}
+                    onPress={() => navigation.navigate("SignIn")}
+                  >
+                    <Text category={"c1"} status={"info"}>
+                    Already have an account? Signin.
+                    </Text>
+                  </TouchableOpacity>
+
+                  {/* <OrDivider style={styles.orContainer} />
 
                   <GoogleButton
                     text="Sign up with Google"
                     style={styles.button}
                     onPress={async () => await googleAuth()}
-                  />
+                  /> */}
                 </>
               );
             }}
@@ -151,6 +161,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   forgotPasswordContainer: { alignItems: "flex-end", marginTop: 5 },
+  alreadyHaveAccountContainer: { alignItems: "center", marginTop: 12 },
   signUpButton: { marginTop: 20 },
   orContainer: {
     marginVertical: 30,

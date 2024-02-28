@@ -12,14 +12,21 @@ import { PasswordInput } from "../components/PasswordInput";
 import { OrDivider } from "../components/OrDivider";
 import { useAuth } from "../hooks/useAuth";
 import { FIREBASE_AUTH } from "../firebaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+} from "firebase/auth";
 import { useUser } from "../hooks/useUser";
 
 export const SignInScreen = () => {
   const navigation = useNavigation();
   const { googleAuth } = useAuth();
   const { login } = useUser();
+
   const auth = FIREBASE_AUTH;
+  const provider = new GoogleAuthProvider();
 
   const signin = async (email: string, password: string) => {
     try {
@@ -122,12 +129,21 @@ export const SignInScreen = () => {
                     Sign In
                   </Button>
 
-                  <OrDivider style={styles.orContainer} />
+                  <TouchableOpacity
+                    style={styles.dontHaveAccountContainer}
+                    onPress={() => navigation.navigate("SignUp")}
+                  >
+                    <Text category={"c1"} status={"info"}>
+                      Don't have an account ? Register.
+                    </Text>
+                  </TouchableOpacity>
+
+                  {/* <OrDivider style={styles.orContainer} />
                   <GoogleButton
                     text="Continue with Google"
                     style={styles.button}
-                    onPress={async () => await googleAuth()}
-                  />
+                    onPress={signInWithGoogle}
+                  /> */}
                 </>
               );
             }}
@@ -145,6 +161,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   forgotPasswordContainer: { alignItems: "flex-end", marginTop: 5 },
+  dontHaveAccountContainer: { alignItems: "center", marginTop: 12 },
+
   signInButton: { marginTop: 20 },
   orContainer: {
     marginVertical: 30,

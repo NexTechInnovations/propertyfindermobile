@@ -47,7 +47,6 @@ export const SignInScreen = () => {
   return (
     <KeyboardAwareScrollView bounces={false}>
       <Screen>
-        <ModalHeader text="JPApartments" xShown />
         <View style={styles.container}>
           <Text category={"h5"} style={styles.header}>
             Sign In

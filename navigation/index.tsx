@@ -3,9 +3,13 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-
+import * as SecureStore from "expo-secure-store";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  DefaultTheme,
+  useNavigation,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { ColorSchemeName, Pressable } from "react-native";
@@ -62,10 +66,18 @@ export default function Navigation({
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
-  const { login } = useUser();
+  const { user, login } = useUser();
+  // const user = SecureStore.getItem("user");
+  const navigation = useNavigation();
 
   const { registerForPushNotificationsAsync, handleNotificationResponse } =
     useNotifications();
+
+  useEffect(() => {
+    if (!user) {
+      navigation.navigate("SignIn");
+    }
+  }, []);
 
   useEffect(() => {
     registerForPushNotificationsAsync();
@@ -95,21 +107,21 @@ function RootNavigator() {
         component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="SignIn"
+        component={SignInScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUpScreen}
+        options={{ headerShown: false }}
+      />
 
       <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen
           name="FindLocations"
           component={FindLocationsScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SignIn"
-          component={SignInScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SignUp"
-          component={SignUpScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen

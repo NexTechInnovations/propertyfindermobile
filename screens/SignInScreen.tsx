@@ -19,6 +19,7 @@ import {
   signInWithRedirect,
 } from "firebase/auth";
 import { useUser } from "../hooks/useUser";
+import RangeSlider from "../components/RangeSlider";
 
 export const SignInScreen = () => {
   const navigation = useNavigation();

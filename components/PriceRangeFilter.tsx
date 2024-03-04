@@ -7,6 +7,7 @@ import { selectProperties, setFilters } from "../features/propertiesSlice";
 import { getFormattedNumber } from "../utils/getFormattedNumber";
 import { useSearchPropertiesQuery } from "../hooks/queries/useSearchPropertiesQuery";
 import { setPriceBottomSheet } from "../features/bottomSheetsSlice";
+import RangeSlider from "./RangeSlider";
 
 const PriceRangeFilter = () => {
   const [price, setPrice] = useState({
@@ -36,6 +37,7 @@ const PriceRangeFilter = () => {
 
   return (
     <View style={styles.container}>
+      <RangeSlider />
       <View style={styles.contentContainer}>
         <Input
           style={styles.input}

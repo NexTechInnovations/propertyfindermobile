@@ -1,0 +1,550 @@
+{
+  "savedProperties": [
+    {
+      "id": 4517185,
+      "ownerID": 706060,
+      "userExternalID": "706060",
+      "sourceID": 1,
+      "state": "active",
+      "_geoloc": {
+        "lat": 25.179787,
+        "lng": 55.269153
+      },
+      "geography": {
+        "lat": 25.179787,
+        "lng": 55.269153
+      },
+      "purpose": "for-rent",
+      "price": 12999,
+      "product": "superhot",
+      "productLabel": "default",
+      "productScore": 0,
+      "rentFrequency": "monthly",
+      "referenceNumber": "NEG,AG",
+      "permitNumber": null,
+      "projectNumber": null,
+      "title": "Stunning Fully Furnished | High Floor | Ready To Move",
+      "title_l1": "شقة في برج اي جي،الخليج التجاري 1 غرفة 12999 درهم - 7522359",
+      "title_l2": "位于商业湾，AG大厦 1 卧室的公寓 12999 AED - 7522359",
+      "title_l3": "Квартира в Бизнес Бей，АГ Тауэр, 1 спальня, 12999 AED - 7522359",
+      "externalID": "7522359",
+      "slug": "stunning-fully-furnished-high-floor-ready-to-move-7522359",
+      "slug_l1": "stunning-fully-furnished-high-floor-ready-to-move-7522359",
+      "slug_l2": "stunning-fully-furnished-high-floor-ready-to-move-7522359",
+      "slug_l3": "stunning-fully-furnished-high-floor-ready-to-move-7522359",
+      "location": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "5001",
+          "name": "UAE",
+          "name_l1": "الإمارات",
+          "name_l2": "阿联酋",
+          "name_l3": "ОАЭ",
+          "slug": "/uae",
+          "slug_l1": "/uae",
+          "slug_l2": "/uae",
+          "slug_l3": "/uae"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "5002",
+          "name": "Dubai",
+          "name_l1": "دبي",
+          "name_l2": "迪拜",
+          "name_l3": "Дубай",
+          "slug": "/dubai",
+          "slug_l1": "/dubai",
+          "slug_l2": "/dubai",
+          "slug_l3": "/dubai"
+        },
+        {
+          "id": 54,
+          "level": 2,
+          "externalID": "5093",
+          "name": "Business Bay",
+          "name_l1": "الخليج التجاري",
+          "name_l2": "商业湾",
+          "name_l3": "Бизнес Бей",
+          "slug": "/dubai/business-bay",
+          "slug_l1": "/dubai/business-bay",
+          "slug_l2": "/dubai/business-bay",
+          "slug_l3": "/dubai/business-bay",
+          "type": "neighbourhood"
+        },
+        {
+          "id": 100,
+          "level": 3,
+          "externalID": "8990",
+          "name": "AG Tower",
+          "name_l1": "برج اي جي",
+          "name_l2": "AG大厦",
+          "name_l3": "АГ Тауэр",
+          "slug": "/dubai/business-bay/ag-tower-",
+          "slug_l1": "/dubai/business-bay/ag-tower-",
+          "slug_l2": "/dubai/business-bay/ag-tower-",
+          "slug_l3": "/dubai/business-bay/ag-tower-",
+          "type": "condo-building"
+        }
+      ],
+      "category": [
+        {
+          "id": 1,
+          "level": 0,
+          "externalID": "1",
+          "name": "Residential",
+          "name_l1": "سكني",
+          "name_l2": "居住物业",
+          "name_l3": "Жилые",
+          "slug": "residential",
+          "slug_l1": "residential",
+          "slug_l2": "residential",
+          "slug_l3": "residential",
+          "nameSingular": "Residential",
+          "nameSingular_l1": "سكني",
+          "nameSingular_l2": "居住物业",
+          "nameSingular_l3": "Жилые"
+        },
+        {
+          "id": 2,
+          "level": 1,
+          "externalID": "4",
+          "name": "Apartments",
+          "name_l1": "شقق",
+          "name_l2": "公寓",
+          "name_l3": "Апартаменты",
+          "slug": "apartments",
+          "slug_l1": "apartments",
+          "slug_l2": "apartments",
+          "slug_l3": "apartments",
+          "nameSingular": "Apartment",
+          "nameSingular_l1": "شقة",
+          "nameSingular_l2": "公寓",
+          "nameSingular_l3": "Квартира"
+        }
+      ],
+      "createdAt": 1685440632,
+      "updatedAt": 1709552774,
+      "reactivatedAt": 1706530937.158683,
+      "rooms": 1,
+      "baths": 2,
+      "area": 76.27339584,
+      "score": 75,
+      "score_l1": 75,
+      "score_l2": 75,
+      "score_l3": 75,
+      "coverPhoto": {
+        "id": 393494042,
+        "externalID": "149233476",
+        "title": null,
+        "orderIndex": 0,
+        "nimaScore": 9.279474361069802,
+        "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/393494042/20cba1eab1de4755871c1ff931d576cb",
+        "main": true
+      },
+      "photoCount": 14,
+      "videoCount": 0,
+      "panoramaCount": 0,
+      "phoneNumber": {
+        "mobile": "+971505065919",
+        "phone": "+97145802357",
+        "whatsapp": "971545695868",
+        "phoneNumbers": ["+97145802357"],
+        "mobileNumbers": ["+971505065919"]
+      },
+      "contactName": "Negar Mohammadmahdi Eftekhari",
+      "agency": {
+        "id": 29589916,
+        "objectID": 29589916,
+        "name": "B L V D Holiday Homes",
+        "name_l1": "-",
+        "name_l2": "B L V D Holiday Homes",
+        "name_l3": "B L V D Holiday Homes",
+        "externalID": "10204",
+        "product": "premium",
+        "productScore": 2,
+        "licenses": [
+          {
+            "number": "906876",
+            "authority": "DED"
+          }
+        ],
+        "logo": {
+          "id": 99895298,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/99895298/9fc421847605425f9f3227a49d9db7f9"
+        },
+        "slug": "b-l-v-d-holiday-homes-10204",
+        "slug_l1": "b-l-v-d-holiday-homes-10204",
+        "slug_l2": "b-l-v-d-holiday-homes-10204",
+        "slug_l3": "b-l-v-d-holiday-homes-10204",
+        "tr": 3,
+        "tier": 3,
+        "roles": [],
+        "active": true,
+        "createdAt": "2021-01-03T01:52:43+00:00",
+        "commercialNumber": null,
+        "shortNumber": null,
+        "performanceCohort": "overachieving"
+      },
+      "hash": "1e78b75",
+      "keywords": [
+        "مفروش",
+        "مطبخ",
+        "دور",
+        "مؤثثة",
+        "جاهزة",
+        "سعر جيد",
+        "spacious",
+        "نظيف",
+        "مول",
+        "مفروشة",
+        "واسعة",
+        "كبيرة",
+        "furnished",
+        "balcony",
+        "mall",
+        "ready",
+        "kitchen",
+        "مجلس",
+        "affordable",
+        "floor",
+        "guest",
+        "بلكونة",
+        "clean"
+      ],
+      "isVerified": true,
+      "verification": {
+        "updatedAt": 1709552782.23123,
+        "eligible": true,
+        "status": "verified",
+        "verifiedAt": 1709552774,
+        "trucheckedAt": 1709552774
+      },
+      "verifiedScore": 0,
+      "completionStatus": "completed",
+      "occupancyStatus": "vacant",
+      "randBoostScore": 681,
+      "randBoostScore_l1": 572,
+      "randBoostScore_l2": 572,
+      "randBoostScore_l3": 572,
+      "floorPlanID": 249,
+      "furnishingStatus": "furnished",
+      "extraFields": {
+        "dldBuildingNK": "tabu-32712696",
+        "dldPropertySK": "dld|mea|ae|tabu+ejari-32739213",
+        "hasSaleTransactions": true
+      },
+      "type": "property",
+      "hasTransactionHistory": true,
+      "hasDldBuildingNk": true,
+      "ownerAgent": {
+        "externalID": "706060",
+        "name": "Negar Mohammadmahdi Eftekhari",
+        "name_l1": "Negar Mohammadmahdi Eftekhari",
+        "name_l2": "Negar Mohammadmahdi Eftekhari",
+        "name_l3": "Negar Mohammadmahdi Eftekhari",
+        "user_image": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/517488581/d3f1d2623b1143e599ad44e8710cad8f",
+        "user_image_id": 517488581,
+        "isTruBroker": false,
+        "slug": "negar-mohammadmahdi-eftekhari-706060",
+        "slug_l1": "negar-mohammadmahdi-eftekhari-706060",
+        "slug_l2": "negar-mohammadmahdi-eftekhari-706060",
+        "slug_l3": "negar-mohammadmahdi-eftekhari-706060"
+      },
+      "amenities": [
+        "24 Hours Concierge",
+        "Security Staff",
+        "Waste Disposal",
+        "Double Glazed Windows",
+        "Laundry Facility",
+        "Balcony or Terrace",
+        "Lobby in Building",
+        "Centrally Air-Conditioned",
+        "Lawn or Garden",
+        "Broadband Internet",
+        "Intercom",
+        "Reception/Waiting Room",
+        "CCTV Security",
+        "Furnished",
+        "Maintenance Staff",
+        "Gym or Health Club",
+        "Swimming Pool",
+        "Parking Spaces",
+        "Number of Bathrooms",
+        "Number of Bedrooms",
+        "Service Elevators",
+        "Freehold"
+      ],
+      "amenities_l1": [
+        "حراسة 24 ساعة",
+        "أمن و حماية",
+        "مكبّ نفايات",
+        "نوافذ زجاجية مزدوجة",
+        "خدمة غسيل ملابس",
+        "شرفة أو تراس",
+        "ردهة إستقبال",
+        "نظام تبريد مركزي",
+        "حديقة",
+        "انترنت واسع النطاق",
+        "اتصال داخلي",
+        "غرفة استقبال /انتظار",
+        "نظام كاميرات مراقبة",
+        "مفروشة",
+        "خدمات صيانة",
+        "صالة رياضية أو نادي صحي",
+        "مسبح",
+        "مواقف سيارات",
+        "عدد دورات المياه",
+        "عدد الغرف",
+        "خدمات المصاعد",
+        "التملك الحر"
+      ],
+      "amenities_l2": [
+        "24小时礼宾服务",
+        "全部楼层",
+        "垃圾处理",
+        "双层玻璃窗",
+        "洗衣设施",
+        "阳台",
+        "入户大堂",
+        "中央空调",
+        "绿化",
+        "宽带网络",
+        "对讲电话",
+        "桑拿",
+        "闭路电视安全",
+        "配备家具",
+        "清洁服务",
+        "健身房或健身俱乐部",
+        "附近医院",
+        "泊车位",
+        "卫浴数",
+        "卧室数",
+        "服务电梯",
+        "永久产权"
+      ],
+      "amenities_l3": [
+        "Круглосуточный консьерж",
+        "Сотрудники безопасности",
+        "Утилизация отходов",
+        "Окна с двойным остеклением",
+        "прачечная",
+        "Балкон или терраса",
+        "Лобби в здании",
+        "Центральное кондиционирование",
+        "Газон или сад",
+        "Широкополосный интернет",
+        "Внутренняя связь",
+        "Прием/Зал ожидания",
+        "Безопасность видеонаблюдения",
+        "Меблированный",
+        "Обслуживающий персонал",
+        "Тренажерный зал или оздоровительный клуб",
+        "Бассейн",
+        "Парковочные места",
+        "Количество ванных комнат",
+        "Количество спален",
+        "Служебные лифты",
+        "Право собственности"
+      ],
+      "cityLevelScore": 1,
+      "indyScore": 681,
+      "indyScore_l1": 572,
+      "indyScore_l2": 572,
+      "indyScore_l3": 572,
+      "hasMatchingFloorPlans": true,
+      "photoIDs": [
+        393494042, 393494043, 393494044, 594035594, 508156237, 594035595,
+        594035600, 393494049, 508156240, 393494051, 594035601, 508156242,
+        393494055, 393494057
+      ],
+      "hidePrice": false,
+      "locationPurposeTier": 1,
+      "plotArea": null,
+      "objectID": "4517185",
+      "_highlightResult": {
+        "referenceNumber": {
+          "value": "NEG,AG",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title": {
+          "value": "Stunning Fully Furnished | High Floor | Ready To Move",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l1": {
+          "value": "شقة في برج اي جي،الخليج التجاري 1 غرفة 12999 درهم - 7522359",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l2": {
+          "value": "位于商业湾，AG大厦 1 卧室的公寓 12999 AED - 7522359",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "title_l3": {
+          "value": "Квартира в Бизнес Бей，АГ Тауэр, 1 спальня, 12999 AED - 7522359",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "externalID": {
+          "value": "7522359",
+          "matchLevel": "none",
+          "matchedWords": []
+        },
+        "agency": {
+          "name": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l1": {
+            "value": "-",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l2": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          "name_l3": {
+            "value": "B L V D Holiday Homes",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        },
+        "keywords": [
+          {
+            "value": "مفروش",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مطبخ",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "دور",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مؤثثة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "جاهزة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "سعر جيد",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "spacious",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "نظيف",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مول",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مفروشة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "واسعة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "كبيرة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "furnished",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "balcony",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "mall",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "ready",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "kitchen",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "مجلس",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "affordable",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "floor",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "guest",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "بلكونة",
+            "matchLevel": "none",
+            "matchedWords": []
+          },
+          {
+            "value": "clean",
+            "matchLevel": "none",
+            "matchedWords": []
+          }
+        ]
+      }
+    }
+  ],
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

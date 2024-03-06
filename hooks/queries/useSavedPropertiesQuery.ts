@@ -11,14 +11,11 @@ const fetchProperties = async (
 ): Promise<Property[]> => {
   if (!userID) return [];
 
-  const response = await axios.get(
-    endpoints.getSavedPropertiesByUserID(userID),
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await axios.get("http://localhost:3000/savedProperties", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   const data: Property[] = response.data;
   for (let i of data) i.liked = true;

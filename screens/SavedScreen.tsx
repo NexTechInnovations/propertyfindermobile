@@ -73,11 +73,11 @@ export const SavedScreen = () => {
             property={item}
             style={styles.card}
             onPress={() =>
-              navigation.navigate("PropertyDetails", { propertyID: item.ID })
+              navigation.navigate("PropertyDetails", { propertyID: item.id })
             }
           />
         )}
-        keyExtractor={(item) => item.ID.toString()}
+        keyExtractor={(item) => item.id.toString()}
       />
     );
   };

@@ -48,6 +48,7 @@
     "expo-web-browser": "~12.8.2",
     "firebase": "^10.8.0",
     "formik": "^2.2.9",
+    "json-server": "^1.0.0-alpha.23",
     "lottie-react-native": "6.5.1",
     "react": "^18.2.0",
     "react-dom": "18.2.0",

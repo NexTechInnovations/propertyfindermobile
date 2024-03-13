@@ -29,8 +29,9 @@ export const useSavePropertyMutation = () => {
   const queryClient = useQueryClient();
 
   return useMutation(
-    ({ propertyID, op }: { propertyID: number; op: "add" | "remove" }) =>
-      saveOrUnsaveProperty(propertyID, op, user?.ID, user?.accessToken),
+    ({ propertyID, op }: { propertyID: number; op: "add" | "remove" }) => (
+      propertyID, op, user?.ID, user?.accessToken
+    ),
     {
       onMutate: async ({ propertyID, op }) => {
         await queryClient.cancelQueries(queryKeys.savedProperties);

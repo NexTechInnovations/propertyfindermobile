@@ -10,10 +10,18 @@ import { getStateAbbreviation } from "../../utils/getStateAbbreviation";
 import { useUser } from "../../hooks/useUser";
 import { useSavePropertyMutation } from "../../hooks/mutations/useSavePropertyMutation";
 import { getPropertyFormattedLocation } from "../../utils/getPropertyFormatedLocation";
+import api from "../../services/api";
 
 export const PropertyHeaderSection = ({ property }: { property: Property }) => {
   const { user, setSavedProperties } = useUser();
   const saveProperty = useSavePropertyMutation();
+
+  // const saveProperty = async (property: Property, op: string) => {
+  //   if (op === "add")
+  //     await api.post("http://localhost:3000/savedProperties", { ...property, liked: true });
+  //   else
+  //     await api.delete(`http://localhost:3000/savedProperties/${property.id}}`);
+  // };
 
   const alterUsersSavedProperties = (
     propertyID: number,
@@ -28,14 +36,17 @@ export const PropertyHeaderSection = ({ property }: { property: Property }) => {
 
     setSavedProperties(newProperties);
   };
-
+  
   const handleHeartPress = () => {
     if (!user) return alert("Please sign up or sign in to save properties");
     let op: "add" | "remove" = "add";
     if (property?.liked) op = "remove";
 
     alterUsersSavedProperties(property.id, op);
+    // saveProperty(property, op);
     saveProperty.mutate({ propertyID: property.id, op });
+
+    
   };
 
   const shareItem = async () => {

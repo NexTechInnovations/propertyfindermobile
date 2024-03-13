@@ -11,7 +11,7 @@ const fetchProperties = async (
 ): Promise<Property[]> => {
   if (!userID) return [];
 
-  const response = await axios.get("http://localhost:3000/savedProperties", {
+  const response = await axios.get("http://localhost:4000/savedProperties", {
     headers: {
       Authorization: `Bearer ${token}`,
     },

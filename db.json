@@ -1,37 +1,37 @@
 {
   "savedProperties": [
     {
-      "id": 4517185,
-      "ownerID": 706060,
-      "userExternalID": "706060",
+      "id": 5654276,
+      "objectID": 5654276,
+      "ownerID": 2230587,
+      "userExternalID": "2230587",
       "sourceID": 1,
       "state": "active",
-      "_geoloc": {
-        "lat": 25.179787,
-        "lng": 55.269153
-      },
       "geography": {
-        "lat": 25.179787,
-        "lng": 55.269153
+        "lat": 25.064958,
+        "lng": 55.243094
       },
-      "purpose": "for-rent",
-      "price": 12999,
+      "purpose": "for-sale",
+      "price": 560000,
       "product": "superhot",
       "productLabel": "default",
-      "productScore": 0,
-      "rentFrequency": "monthly",
-      "referenceNumber": "NEG,AG",
-      "permitNumber": null,
+      "rentFrequency": null,
+      "referenceNumber": "101569-v6INGc",
+      "permitNumber": "71165255074",
       "projectNumber": null,
-      "title": "Stunning Fully Furnished | High Floor | Ready To Move",
-      "title_l1": "شقة في برج اي جي،الخليج التجاري 1 غرفة 12999 درهم - 7522359",
-      "title_l2": "位于商业湾，AG大厦 1 卧室的公寓 12999 AED - 7522359",
-      "title_l3": "Квартира в Бизнес Бей，АГ Тауэр, 1 спальня, 12999 AED - 7522359",
-      "externalID": "7522359",
-      "slug": "stunning-fully-furnished-high-floor-ready-to-move-7522359",
-      "slug_l1": "stunning-fully-furnished-high-floor-ready-to-move-7522359",
-      "slug_l2": "stunning-fully-furnished-high-floor-ready-to-move-7522359",
-      "slug_l3": "stunning-fully-furnished-high-floor-ready-to-move-7522359",
+      "title": "Ready to Move | Fully Furnished | Brand New",
+      "title_l1": "شقة في جويلز من دانوب،أرجان 560000 درهم - 8674284",
+      "title_l2": "位于阿尔扬街区，多瑙河畔宝石公寓 的公寓 560000 AED - 8674284",
+      "title_l3": "Квартира в Арджан，Джевелз от Данубе, 560000 AED - 8674284",
+      "description": "Innova Real Estate, is delighted to offer you this studio apartment for Sale in Arjan, one of the booming neighborhood in Dubai for investment.   \n\n\nProperty Details:\n- Studio\n- 422.70 sq. ft\n- Fully Furnished\n- Top quality finishes\n- Kitchen appliances included\n- Spacious balcony\n- Built-in wardrobe\n- One Covered parking\n\nFeatures:\n- Spacious Lobby\n- Swimming pool\n- Equipped gym\n- Health club\n- Sauna and Steam\n- Jacuzzi\n- Jogging track\n- Badminton and paddle tennis court\n- Barbeque area\n- Multipurpose hall\n- Kids Play Area\n\nJewelz by Danube is a 16-story residential building in Arjan, Dubai, UAE. It is a luxurious and elegant development that offers a variety of apartment types, including studios, 1-bedroom, and 2-bedroom apartments. All apartments are fully furnished and feature high-end finishes and appliances.   \n\nLocated in a prime location in Arjan, close to a variety of schools, hospitals, shopping malls, and restaurants. It is also well-connected to the rest of Dubai via major highways and public transportation.",
+      "description_l1": "Innova Real Estate, is delighted to offer you this studio apartment for Sale in Arjan, one of the booming neighborhood in Dubai for investment.   \n\n\nProperty Details:\n- Studio\n- 422.70 sq. ft\n- Fully Furnished\n- Top quality finishes\n- Kitchen appliances included\n- Spacious balcony\n- Built-in wardrobe\n- One Covered parking\n\nFeatures:\n- Spacious Lobby\n- Swimming pool\n- Equipped gym\n- Health club\n- Sauna and Steam\n- Jacuzzi\n- Jogging track\n- Badminton and paddle tennis court\n- Barbeque area\n- Multipurpose hall\n- Kids Play Area\n\nJewelz by Danube is a 16-story residential building in Arjan, Dubai, UAE. It is a luxurious and elegant development that offers a variety of apartment types, including studios, 1-bedroom, and 2-bedroom apartments. All apartments are fully furnished and feature high-end finishes and appliances.   \n\nLocated in a prime location in Arjan, close to a variety of schools, hospitals, shopping malls, and restaurants. It is also well-connected to the rest of Dubai via major highways and public transportation.",
+      "description_l2": "Innova Real Estate, is delighted to offer you this studio apartment for Sale in Arjan, one of the booming neighborhood in Dubai for investment.   \n\n\nProperty Details:\n- Studio\n- 422.70 sq. ft\n- Fully Furnished\n- Top quality finishes\n- Kitchen appliances included\n- Spacious balcony\n- Built-in wardrobe\n- One Covered parking\n\nFeatures:\n- Spacious Lobby\n- Swimming pool\n- Equipped gym\n- Health club\n- Sauna and Steam\n- Jacuzzi\n- Jogging track\n- Badminton and paddle tennis court\n- Barbeque area\n- Multipurpose hall\n- Kids Play Area\n\nJewelz by Danube is a 16-story residential building in Arjan, Dubai, UAE. It is a luxurious and elegant development that offers a variety of apartment types, including studios, 1-bedroom, and 2-bedroom apartments. All apartments are fully furnished and feature high-end finishes and appliances.   \n\nLocated in a prime location in Arjan, close to a variety of schools, hospitals, shopping malls, and restaurants. It is also well-connected to the rest of Dubai via major highways and public transportation.",
+      "description_l3": "Innova Real Estate, is delighted to offer you this studio apartment for Sale in Arjan, one of the booming neighborhood in Dubai for investment.   \n\n\nProperty Details:\n- Studio\n- 422.70 sq. ft\n- Fully Furnished\n- Top quality finishes\n- Kitchen appliances included\n- Spacious balcony\n- Built-in wardrobe\n- One Covered parking\n\nFeatures:\n- Spacious Lobby\n- Swimming pool\n- Equipped gym\n- Health club\n- Sauna and Steam\n- Jacuzzi\n- Jogging track\n- Badminton and paddle tennis court\n- Barbeque area\n- Multipurpose hall\n- Kids Play Area\n\nJewelz by Danube is a 16-story residential building in Arjan, Dubai, UAE. It is a luxurious and elegant development that offers a variety of apartment types, including studios, 1-bedroom, and 2-bedroom apartments. All apartments are fully furnished and feature high-end finishes and appliances.   \n\nLocated in a prime location in Arjan, close to a variety of schools, hospitals, shopping malls, and restaurants. It is also well-connected to the rest of Dubai via major highways and public transportation.",
+      "externalID": "8674284",
+      "slug": "ready-to-move-fully-furnished-brand-new-8674284",
+      "slug_l1": "ready-to-move-fully-furnished-brand-new-8674284",
+      "slug_l2": "ready-to-move-fully-furnished-brand-new-8674284",
+      "slug_l3": "ready-to-move-fully-furnished-brand-new-8674284",
       "location": [
         {
           "id": 1,
@@ -60,31 +60,31 @@
           "slug_l3": "/dubai"
         },
         {
-          "id": 54,
+          "id": 91,
           "level": 2,
-          "externalID": "5093",
-          "name": "Business Bay",
-          "name_l1": "الخليج التجاري",
-          "name_l2": "商业湾",
-          "name_l3": "Бизнес Бей",
-          "slug": "/dubai/business-bay",
-          "slug_l1": "/dubai/business-bay",
-          "slug_l2": "/dubai/business-bay",
-          "slug_l3": "/dubai/business-bay",
+          "externalID": "5785",
+          "name": "Arjan",
+          "name_l1": "أرجان",
+          "name_l2": "阿尔扬街区",
+          "name_l3": "Арджан",
+          "slug": "/dubai/arjan",
+          "slug_l1": "/dubai/arjan",
+          "slug_l2": "/dubai/arjan",
+          "slug_l3": "/dubai/arjan",
           "type": "neighbourhood"
         },
         {
-          "id": 100,
+          "id": 4976,
           "level": 3,
-          "externalID": "8990",
-          "name": "AG Tower",
-          "name_l1": "برج اي جي",
-          "name_l2": "AG大厦",
-          "name_l3": "АГ Тауэр",
-          "slug": "/dubai/business-bay/ag-tower-",
-          "slug_l1": "/dubai/business-bay/ag-tower-",
-          "slug_l2": "/dubai/business-bay/ag-tower-",
-          "slug_l3": "/dubai/business-bay/ag-tower-",
+          "externalID": "11920",
+          "name": "Jewelz by Danube",
+          "name_l1": "جويلز من دانوب",
+          "name_l2": "多瑙河畔宝石公寓",
+          "name_l3": "Джевелз от Данубе",
+          "slug": "/dubai/arjan/jewelz-by-danube",
+          "slug_l1": "/dubai/arjan/jewelz-by-danube",
+          "slug_l2": "/dubai/arjan/jewelz-by-danube",
+          "slug_l3": "/dubai/arjan/jewelz-by-danube",
           "type": "condo-building"
         }
       ],
@@ -124,425 +124,548 @@
           "nameSingular_l3": "Квартира"
         }
       ],
-      "createdAt": 1685440632,
-      "updatedAt": 1709552774,
-      "reactivatedAt": 1706530937.158683,
-      "rooms": 1,
-      "baths": 2,
-      "area": 76.27339584,
+      "createdAt": 1709126186,
+      "approvedAt": 1709126186,
+      "updatedAt": 1709725666,
+      "touchedAt": 1709726352.197502,
+      "reactivatedAt": 1709126186,
+      "rooms": 0,
+      "baths": 1,
+      "area": 39.29798592,
       "score": 75,
       "score_l1": 75,
       "score_l2": 75,
       "score_l3": 75,
       "coverPhoto": {
-        "id": 393494042,
-        "externalID": "149233476",
-        "title": null,
+        "id": 623150403,
+        "externalID": "167833416",
+        "title": "IRE02755. jpg",
         "orderIndex": 0,
-        "nimaScore": 9.279474361069802,
-        "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/393494042/20cba1eab1de4755871c1ff931d576cb",
+        "nimaScore": 9.614104283891265,
+        "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150403/3d37149fddd34ce3b0034a2721c6c6ea",
         "main": true
       },
-      "photoCount": 14,
+      "photoCount": 15,
       "videoCount": 0,
       "panoramaCount": 0,
-      "phoneNumber": {
-        "mobile": "+971505065919",
-        "phone": "+97145802357",
-        "whatsapp": "971545695868",
-        "phoneNumbers": ["+97145802357"],
-        "mobileNumbers": ["+971505065919"]
+      "photos": [
+        {
+          "id": 623150403,
+          "externalID": "167833416",
+          "title": "IRE02755. jpg",
+          "orderIndex": 0,
+          "nimaScore": 9.614104283891265,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150403/3d37149fddd34ce3b0034a2721c6c6ea"
+        },
+        {
+          "id": 623150847,
+          "externalID": "167833417",
+          "title": "IRE02761. jpg",
+          "orderIndex": 1,
+          "nimaScore": 8.592933474994425,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150847/b0969a542c8d4692ab465da036472a23"
+        },
+        {
+          "id": 623150848,
+          "externalID": "167833420",
+          "title": "IRE02762. jpg",
+          "orderIndex": 2,
+          "nimaScore": 7.493336433573859,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150848/4c72e19150e441a1848f6fec551ed818"
+        },
+        {
+          "id": 623150850,
+          "externalID": "167833421",
+          "title": "IRE02764. jpg",
+          "orderIndex": 3,
+          "nimaScore": 8.369452870741952,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150850/1a8b27f74f3a46e68bbc17ee05f94104"
+        },
+        {
+          "id": 623150851,
+          "externalID": "167833423",
+          "title": "IRE02766. jpg",
+          "orderIndex": 4,
+          "nimaScore": 8.841586086629832,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150851/da75f9f425374522a649bf68c0adb345"
+        },
+        {
+          "id": 623150852,
+          "externalID": "167833424",
+          "title": "IRE02767. jpg",
+          "orderIndex": 5,
+          "nimaScore": 9.074051372612757,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150852/af1ad81c49c14d96a9f254a4b6ff68a8"
+        },
+        {
+          "id": 623150865,
+          "externalID": "167833426",
+          "title": "IRE02770. jpg",
+          "orderIndex": 6,
+          "nimaScore": 9.819123561856003,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150865/ef3784ecbd40402f80ff1601cbc4cbac"
+        },
+        {
+          "id": 623150870,
+          "externalID": "167833428",
+          "title": "IRE02771. jpg",
+          "orderIndex": 7,
+          "nimaScore": 9.309134620246368,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150870/6207442c29d2406e853f104e0014cbc7"
+        },
+        {
+          "id": 623150872,
+          "externalID": "167833429",
+          "title": "IRE02773. jpg",
+          "orderIndex": 8,
+          "nimaScore": 9.907284285072762,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150872/eb4c92c0a41943d293db4db2e1915520"
+        },
+        {
+          "id": 623150875,
+          "externalID": "167833432",
+          "title": "IRE02775. jpg",
+          "orderIndex": 9,
+          "nimaScore": 6.018836784962055,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150875/38319c17c897417a803671d02943e5cd"
+        },
+        {
+          "id": 623150876,
+          "externalID": "167833433",
+          "title": "IRE02778. jpg",
+          "orderIndex": 10,
+          "nimaScore": 6.005589061115971,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150876/2663326079f145e2b8b1ad224f358497"
+        },
+        {
+          "id": 623150877,
+          "externalID": "167833435",
+          "title": "IRE02782. jpg",
+          "orderIndex": 11,
+          "nimaScore": 8.113551638447461,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150877/fbb3d6565e2e46968de4322fa76a1de8"
+        },
+        {
+          "id": 623150878,
+          "externalID": "167833436",
+          "title": "IRE02758. jpg",
+          "orderIndex": 12,
+          "nimaScore": 8.769626426128951,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150878/f0d0f68d45b748be86bc828e1137f73d"
+        },
+        {
+          "id": 623150879,
+          "externalID": "167833438",
+          "title": "IRE02752. jpg",
+          "orderIndex": 13,
+          "nimaScore": 7.832804344096829,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150879/1d83dca9f5ae4a88bd9a2c0f8cf8e186"
+        },
+        {
+          "id": 623150880,
+          "externalID": "167833440",
+          "title": "IRE02751. jpg",
+          "orderIndex": 14,
+          "nimaScore": 8.509407553763594,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/623150880/75866cdbe8334b3183f6dcf8b0087f3f"
+        }
+      ],
+      "floorPlans": [],
+      "floorPlan": {
+        "id": 24007,
+        "typeIdentifier": "unit",
+        "typeIdentifierValue": "2-6,7",
+        "images": [
+          {
+            "id": 30288,
+            "externalID": "08727fbc-7237-41d9-b08f-59a946db3988",
+            "orderIndex": 5,
+            "image2D": {
+              "id": 82677760
+            },
+            "image3D": {
+              "id": 82677761
+            },
+            "label": "Unit-8,10,12-16,20-24,26-30\r\nFirst Floor"
+          }
+        ],
+        "models": [
+          {
+            "id": 15972,
+            "externalID": "4432fa2992964577b7539e0921699aee",
+            "orderIndex": 5,
+            "placeholderImage": {
+              "id": 189122732
+            },
+            "label": "Unit-8,10,12-16,20-24,26-30\r\nFirst Floor",
+            "modelURL": null
+          }
+        ]
       },
-      "contactName": "Negar Mohammadmahdi Eftekhari",
+      "videos": [],
+      "panoramas": [],
+      "amenities": [
+        {
+          "externalGroupID": 5,
+          "groupRank": 2,
+          "text": "Building",
+          "text_l1": "البناء",
+          "text_l2": "入户大堂",
+          "text_l3": "Здание",
+          "amenities": [
+            {
+              "text": "Balcony or Terrace",
+              "text_l1": "شرفة أو تراس",
+              "text_l2": "阳台",
+              "text_l3": "Балкон или терраса",
+              "value": "True",
+              "rank": 1,
+              "slug": "balcony-or-terrace",
+              "format": "checkbox",
+              "externalID": 3
+            },
+            {
+              "text": "Lobby in Building",
+              "text_l1": "ردهة إستقبال",
+              "text_l2": "入户大堂",
+              "text_l3": "Лобби в здании",
+              "value": "True",
+              "rank": 2,
+              "slug": "lobby-in-building",
+              "format": "checkbox",
+              "externalID": 5
+            },
+            {
+              "text": "Prayer Room",
+              "text_l1": "غرفة صلاة",
+              "text_l2": "祈祷室",
+              "text_l3": "Молитвенная комната",
+              "value": "True",
+              "rank": 7,
+              "slug": "prayer-room",
+              "format": "checkbox",
+              "externalID": 23
+            },
+            {
+              "text": "Reception/Waiting Room",
+              "text_l1": "غرفة استقبال /انتظار",
+              "text_l2": "桑拿",
+              "text_l3": "Прием/Зал ожидания",
+              "value": "True",
+              "rank": 8,
+              "slug": "receptionwaiting-room",
+              "format": "checkbox",
+              "externalID": 41
+            }
+          ]
+        },
+        {
+          "externalGroupID": 3,
+          "groupRank": 3,
+          "text": "Health and Fitness",
+          "text_l1": "الصحة و اللياقة",
+          "text_l2": "阳台",
+          "text_l3": "Здоровье и Фитнесс",
+          "amenities": [
+            {
+              "text": "Gym or Health Club",
+              "text_l1": "صالة رياضية أو نادي صحي",
+              "text_l2": "健身房或健身俱乐部",
+              "text_l3": "Тренажерный зал или оздоровительный клуб",
+              "value": "True",
+              "rank": 3,
+              "slug": "gym-or-health-club",
+              "format": "checkbox",
+              "externalID": 22
+            },
+            {
+              "text": "Swimming Pool",
+              "text_l1": "مسبح",
+              "text_l2": "附近医院",
+              "text_l3": "Бассейн",
+              "value": "True",
+              "rank": 6,
+              "slug": "swimming-pool",
+              "format": "checkbox",
+              "externalID": 45
+            },
+            {
+              "text": "Jacuzzi",
+              "text_l1": "جاكوزي",
+              "text_l2": "按摩浴缸",
+              "text_l3": "Джакузи",
+              "value": "True",
+              "rank": 9,
+              "slug": "jacuzzi",
+              "format": "checkbox",
+              "externalID": 33
+            },
+            {
+              "text": "Steam Room",
+              "text_l1": "غرفة بخار",
+              "text_l2": "游泳池",
+              "text_l3": "Паровая комната",
+              "value": "True",
+              "rank": 12,
+              "slug": "steam-room",
+              "format": "checkbox",
+              "externalID": 43
+            }
+          ]
+        },
+        {
+          "externalGroupID": 2,
+          "groupRank": 4,
+          "text": "Recreation and Family",
+          "text_l1": "الترفيه والأسرة",
+          "text_l2": "景观",
+          "text_l3": "Отдых и семья",
+          "amenities": [
+            {
+              "text": "Day Care Center",
+              "text_l1": "مركز رعاية أطفال",
+              "text_l2": "日托中心",
+              "text_l3": "Детский сад",
+              "value": "True",
+              "rank": 2,
+              "slug": "day-care-center",
+              "format": "checkbox",
+              "externalID": 9
+            },
+            {
+              "text": "Kids Play Area",
+              "text_l1": "منطقة لعب للأطفال",
+              "text_l2": "儿童娱乐区",
+              "text_l3": "Детская игровая площадка",
+              "value": "True",
+              "rank": 3,
+              "slug": "kids-play-area",
+              "format": "checkbox",
+              "externalID": 34
+            },
+            {
+              "text": "Lawn or Garden",
+              "text_l1": "حديقة",
+              "text_l2": "绿化",
+              "text_l3": "Газон или сад",
+              "value": "True",
+              "rank": 5,
+              "slug": "lawn-or-garden",
+              "format": "checkbox",
+              "externalID": 36
+            },
+            {
+              "text": "Barbeque Area",
+              "text_l1": "مكان مخصص للشواء",
+              "text_l2": "烧烤区",
+              "text_l3": "Зона барбекю",
+              "value": "True",
+              "rank": 7,
+              "slug": "barbeque-area",
+              "format": "checkbox",
+              "externalID": 4
+            }
+          ]
+        },
+        {
+          "externalGroupID": 10,
+          "groupRank": 5,
+          "text": "Cleaning and Maintenance",
+          "text_l1": "التنظيف والصيانة",
+          "text_l2": "备用电力",
+          "text_l3": "Очистка и тех. обслуживание",
+          "amenities": [
+            {
+              "text": "Waste Disposal",
+              "text_l1": "مكبّ نفايات",
+              "text_l2": "垃圾处理",
+              "text_l3": "Утилизация отходов",
+              "value": "True",
+              "rank": 1,
+              "slug": "waste-disposal",
+              "format": "checkbox",
+              "externalID": 11
+            },
+            {
+              "text": "Maintenance Staff",
+              "text_l1": "خدمات صيانة",
+              "text_l2": "清洁服务",
+              "text_l3": "Обслуживающий персонал",
+              "value": "True",
+              "rank": 2,
+              "slug": "maintenance-staff",
+              "format": "checkbox",
+              "externalID": 61
+            },
+            {
+              "text": "Cleaning Services",
+              "text_l1": "خدمات تنظيف",
+              "text_l2": "清洁服务",
+              "text_l3": "Услуги по уборке",
+              "value": "True",
+              "rank": 3,
+              "slug": "cleaning-services",
+              "format": "checkbox",
+              "externalID": 73
+            }
+          ]
+        },
+        {
+          "externalGroupID": 6,
+          "groupRank": 6,
+          "text": "Business and Security",
+          "text_l1": "الأعمال والأمن والحماية",
+          "text_l2": "双层玻璃窗",
+          "text_l3": "Бизнес и безопасность",
+          "amenities": [
+            {
+              "text": "Security Staff",
+              "text_l1": "أمن و حماية",
+              "text_l2": "全部楼层",
+              "text_l3": "Сотрудники безопасности",
+              "value": "True",
+              "rank": 3,
+              "slug": "security-staff",
+              "format": "checkbox",
+              "externalID": 62
+            },
+            {
+              "text": "CCTV Security",
+              "text_l1": "نظام كاميرات مراقبة",
+              "text_l2": "闭路电视安全",
+              "text_l3": "Безопасность видеонаблюдения",
+              "value": "True",
+              "rank": 4,
+              "slug": "cctv-security",
+              "format": "checkbox",
+              "externalID": 63
+            }
+          ]
+        },
+        {
+          "externalGroupID": 4,
+          "groupRank": 7,
+          "text": "Laundry and Kitchen",
+          "text_l1": "الغسيل والمطبخ",
+          "text_l2": "烧烤区",
+          "text_l3": "Прачечная и кухня",
+          "amenities": [
+            {
+              "text": "Laundry Room",
+              "text_l1": "غرفة غسيل",
+              "text_l2": "洗衣房",
+              "text_l3": "Прачечная",
+              "value": "True",
+              "rank": 2,
+              "slug": "laundry-room",
+              "format": "checkbox",
+              "externalID": 24
+            }
+          ]
+        }
+      ],
+      "phoneNumber": {
+        "mobile": "+971507660501",
+        "phone": "+97150655024",
+        "whatsapp": "971545695868",
+        "proxyPhone": "+97144551628",
+        "phoneNumbers": [
+          "+97150655024"
+        ],
+        "mobileNumbers": [
+          "+971507660501"
+        ]
+      },
+      "contactName": "Muhammad Saleem",
       "agency": {
-        "id": 29589916,
-        "objectID": 29589916,
-        "name": "B L V D Holiday Homes",
-        "name_l1": "-",
-        "name_l2": "B L V D Holiday Homes",
-        "name_l3": "B L V D Holiday Homes",
-        "externalID": "10204",
+        "id": 29677502,
+        "objectID": 29677502,
+        "name": "Innova Real Estate",
+        "name_l1": "إنوفا العقارية",
+        "name_l2": "Innova Real Estate",
+        "name_l3": "Innova Real Estate",
+        "externalID": "101569",
         "product": "premium",
         "productScore": 2,
         "licenses": [
           {
-            "number": "906876",
+            "number": "1068023",
             "authority": "DED"
+          },
+          {
+            "number": "30372",
+            "authority": "RERA"
+          },
+          {
+            "number": "30372",
+            "authority": "ORN"
           }
         ],
         "logo": {
-          "id": 99895298,
-          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/99895298/9fc421847605425f9f3227a49d9db7f9"
+          "id": 299980363,
+          "url": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/299980363/0e06edcea7254cab87ec9031cdd31ca1"
         },
-        "slug": "b-l-v-d-holiday-homes-10204",
-        "slug_l1": "b-l-v-d-holiday-homes-10204",
-        "slug_l2": "b-l-v-d-holiday-homes-10204",
-        "slug_l3": "b-l-v-d-holiday-homes-10204",
-        "tr": 3,
-        "tier": 3,
+        "slug": "innova-real-estate-101569",
+        "slug_l1": "innova-real-estate-101569",
+        "slug_l2": "innova-real-estate-101569",
+        "slug_l3": "innova-real-estate-101569",
+        "tr": 2,
+        "tier": 2,
         "roles": [],
         "active": true,
-        "createdAt": "2021-01-03T01:52:43+00:00",
+        "createdAt": "2022-11-10T11:21:59+00:00",
         "commercialNumber": null,
         "shortNumber": null,
-        "performanceCohort": "overachieving"
+        "performanceCohort": "underachieving"
       },
-      "hash": "1e78b75",
-      "keywords": [
-        "مفروش",
-        "مطبخ",
-        "دور",
-        "مؤثثة",
-        "جاهزة",
-        "سعر جيد",
-        "spacious",
-        "نظيف",
-        "مول",
-        "مفروشة",
-        "واسعة",
-        "كبيرة",
-        "furnished",
-        "balcony",
-        "mall",
-        "ready",
-        "kitchen",
-        "مجلس",
-        "affordable",
-        "floor",
-        "guest",
-        "بلكونة",
-        "clean"
-      ],
-      "isVerified": true,
+      "active": true,
+      "hasExactGeography": true,
       "verification": {
-        "updatedAt": 1709552782.23123,
-        "eligible": true,
         "status": "verified",
-        "verifiedAt": 1709552774,
-        "trucheckedAt": 1709552774
+        "type": null,
+        "eligible": true,
+        "comment": null,
+        "updatedAt": 1709725671.30207,
+        "verifiedAt": 1709725666,
+        "visitedAt": null,
+        "trucheckedAt": 1709725666
       },
-      "verifiedScore": 0,
+      "isVerified": true,
       "completionStatus": "completed",
-      "occupancyStatus": "vacant",
-      "randBoostScore": 681,
-      "randBoostScore_l1": 572,
-      "randBoostScore_l2": 572,
-      "randBoostScore_l3": 572,
-      "floorPlanID": 249,
+      "randBoostScore": 225,
+      "randBoostScore_l1": 189,
+      "randBoostScore_l2": 189,
+      "randBoostScore_l3": 189,
       "furnishingStatus": "furnished",
       "extraFields": {
-        "dldBuildingNK": "tabu-32712696",
-        "dldPropertySK": "dld|mea|ae|tabu+ejari-32739213",
+        "dldBuildingNK": "tabu-165233296",
+        "dldPropertySK": "dld|mea|ae|tabu-165255074",
         "hasSaleTransactions": true
       },
       "type": "property",
-      "hasTransactionHistory": true,
-      "hasDldBuildingNk": true,
-      "ownerAgent": {
-        "externalID": "706060",
-        "name": "Negar Mohammadmahdi Eftekhari",
-        "name_l1": "Negar Mohammadmahdi Eftekhari",
-        "name_l2": "Negar Mohammadmahdi Eftekhari",
-        "name_l3": "Negar Mohammadmahdi Eftekhari",
-        "user_image": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/517488581/d3f1d2623b1143e599ad44e8710cad8f",
-        "user_image_id": 517488581,
-        "isTruBroker": false,
-        "slug": "negar-mohammadmahdi-eftekhari-706060",
-        "slug_l1": "negar-mohammadmahdi-eftekhari-706060",
-        "slug_l2": "negar-mohammadmahdi-eftekhari-706060",
-        "slug_l3": "negar-mohammadmahdi-eftekhari-706060"
-      },
-      "amenities": [
-        "24 Hours Concierge",
-        "Security Staff",
-        "Waste Disposal",
-        "Double Glazed Windows",
-        "Laundry Facility",
-        "Balcony or Terrace",
-        "Lobby in Building",
-        "Centrally Air-Conditioned",
-        "Lawn or Garden",
-        "Broadband Internet",
-        "Intercom",
-        "Reception/Waiting Room",
-        "CCTV Security",
-        "Furnished",
-        "Maintenance Staff",
-        "Gym or Health Club",
-        "Swimming Pool",
-        "Parking Spaces",
-        "Number of Bathrooms",
-        "Number of Bedrooms",
-        "Service Elevators",
-        "Freehold"
-      ],
-      "amenities_l1": [
-        "حراسة 24 ساعة",
-        "أمن و حماية",
-        "مكبّ نفايات",
-        "نوافذ زجاجية مزدوجة",
-        "خدمة غسيل ملابس",
-        "شرفة أو تراس",
-        "ردهة إستقبال",
-        "نظام تبريد مركزي",
-        "حديقة",
-        "انترنت واسع النطاق",
-        "اتصال داخلي",
-        "غرفة استقبال /انتظار",
-        "نظام كاميرات مراقبة",
-        "مفروشة",
-        "خدمات صيانة",
-        "صالة رياضية أو نادي صحي",
-        "مسبح",
-        "مواقف سيارات",
-        "عدد دورات المياه",
-        "عدد الغرف",
-        "خدمات المصاعد",
-        "التملك الحر"
-      ],
-      "amenities_l2": [
-        "24小时礼宾服务",
-        "全部楼层",
-        "垃圾处理",
-        "双层玻璃窗",
-        "洗衣设施",
-        "阳台",
-        "入户大堂",
-        "中央空调",
-        "绿化",
-        "宽带网络",
-        "对讲电话",
-        "桑拿",
-        "闭路电视安全",
-        "配备家具",
-        "清洁服务",
-        "健身房或健身俱乐部",
-        "附近医院",
-        "泊车位",
-        "卫浴数",
-        "卧室数",
-        "服务电梯",
-        "永久产权"
-      ],
-      "amenities_l3": [
-        "Круглосуточный консьерж",
-        "Сотрудники безопасности",
-        "Утилизация отходов",
-        "Окна с двойным остеклением",
-        "прачечная",
-        "Балкон или терраса",
-        "Лобби в здании",
-        "Центральное кондиционирование",
-        "Газон или сад",
-        "Широкополосный интернет",
-        "Внутренняя связь",
-        "Прием/Зал ожидания",
-        "Безопасность видеонаблюдения",
-        "Меблированный",
-        "Обслуживающий персонал",
-        "Тренажерный зал или оздоровительный клуб",
-        "Бассейн",
-        "Парковочные места",
-        "Количество ванных комнат",
-        "Количество спален",
-        "Служебные лифты",
-        "Право собственности"
-      ],
       "cityLevelScore": 1,
-      "indyScore": 681,
-      "indyScore_l1": 572,
-      "indyScore_l2": 572,
-      "indyScore_l3": 572,
+      "indyScore": 225,
+      "indyScore_l1": 189,
+      "indyScore_l2": 189,
+      "indyScore_l3": 189,
       "hasMatchingFloorPlans": true,
-      "photoIDs": [
-        393494042, 393494043, 393494044, 594035594, 508156237, 594035595,
-        594035600, 393494049, 508156240, 393494051, 594035601, 508156242,
-        393494055, 393494057
-      ],
       "hidePrice": false,
-      "locationPurposeTier": 1,
+      "locationPurposeTier": 2,
       "plotArea": null,
-      "objectID": "4517185",
-      "_highlightResult": {
-        "referenceNumber": {
-          "value": "NEG,AG",
-          "matchLevel": "none",
-          "matchedWords": []
-        },
-        "title": {
-          "value": "Stunning Fully Furnished | High Floor | Ready To Move",
-          "matchLevel": "none",
-          "matchedWords": []
-        },
-        "title_l1": {
-          "value": "شقة في برج اي جي،الخليج التجاري 1 غرفة 12999 درهم - 7522359",
-          "matchLevel": "none",
-          "matchedWords": []
-        },
-        "title_l2": {
-          "value": "位于商业湾，AG大厦 1 卧室的公寓 12999 AED - 7522359",
-          "matchLevel": "none",
-          "matchedWords": []
-        },
-        "title_l3": {
-          "value": "Квартира в Бизнес Бей，АГ Тауэр, 1 спальня, 12999 AED - 7522359",
-          "matchLevel": "none",
-          "matchedWords": []
-        },
-        "externalID": {
-          "value": "7522359",
-          "matchLevel": "none",
-          "matchedWords": []
-        },
-        "agency": {
-          "name": {
-            "value": "B L V D Holiday Homes",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          "name_l1": {
-            "value": "-",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          "name_l2": {
-            "value": "B L V D Holiday Homes",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          "name_l3": {
-            "value": "B L V D Holiday Homes",
-            "matchLevel": "none",
-            "matchedWords": []
-          }
-        },
-        "keywords": [
-          {
-            "value": "مفروش",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "مطبخ",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "دور",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "مؤثثة",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "جاهزة",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "سعر جيد",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "spacious",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "نظيف",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "مول",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "مفروشة",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "واسعة",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "كبيرة",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "furnished",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "balcony",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "mall",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "ready",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "kitchen",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "مجلس",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "affordable",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "floor",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "guest",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "بلكونة",
-            "matchLevel": "none",
-            "matchedWords": []
-          },
-          {
-            "value": "clean",
-            "matchLevel": "none",
-            "matchedWords": []
-          }
-        ]
-      }
+      "liked": true
     }
   ],
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
-  ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "profile": {
     "name": "typicode"

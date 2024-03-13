@@ -7,13 +7,14 @@ export const AuthContext = createContext<{
   setUser: (user: User | null) => void;
 }>({
   user: {
-    ID: 12,
-    firstName: "Saif",
-    lastName: "Mohamed",
-    email: "saifmohamed.dev@gmail.com",
+    ID: "",
+    firstName: "",
+    lastName: "",
+    email: "",
     allowsNotifications: true,
-    accessToken: "12361263",
-    refreshToken: "138765123",
+    accessToken: "",
+    refreshToken: "",
+    savedProperties: [4517185],
   },
   setUser: (user: User | null) => {},
 });
